@@ -13,9 +13,7 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
     background:#0b1220;
@@ -27,8 +25,8 @@ nav{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(11,18,32,0.75);
-    backdrop-filter:blur(14px);
+    background:rgba(11,18,32,0.7);
+    backdrop-filter:blur(16px);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -44,22 +42,20 @@ nav .links a{
     font-size:14px;
 }
 
-nav .links a:hover{
-    color:#3b82f6;
-}
+nav .links a:hover{ color:#3b82f6; }
 
-/* HERO */
+/* HERO (NEW LAYERED SYSTEM) */
 .hero{
     min-height:100vh;
     position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:120px 20px 60px;
+    padding:120px 20px;
     overflow:hidden;
 }
 
-/* CNC MACHINE BACKGROUND (primary layer) */
+/* CNC BACKGROUND */
 .hero::before{
     content:"";
     position:absolute;
@@ -68,81 +64,64 @@ nav .links a:hover{
     background-size:cover;
     background-position:center;
     opacity:0.18;
-    filter:contrast(1.2) brightness(0.55);
+    filter:contrast(1.2) brightness(0.5);
 }
 
-/* BLUE INDUSTRIAL OVERLAY */
+/* BLUE INDUSTRIAL DEPTH */
 .hero::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(135deg,#0b1220 35%,#0b2a55);
-    opacity:0.85;
+    background:
+        radial-gradient(circle at center, rgba(37,99,235,0.25), transparent 60%),
+        linear-gradient(135deg,#0b1220 30%,#0b2a55);
+    opacity:0.9;
 }
 
-/* HERO GRID */
+/* CENTER BRAND LAYER (LOGO AS IDENTITY WALL) */
+.brand-layer{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+    opacity:0.9;
+}
+
+.brand-layer svg{
+    width:100%;
+    max-width:900px;   /* BIG IDENTITY MARK */
+    opacity:0.55;      /* subtle background brand */
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+}
+
+/* TEXT FLOATING ABOVE EVERYTHING */
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:1250px;
-    width:100%;
-    display:grid;
-    grid-template-columns:1.3fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-
-/* LOGO = HERO IDENTITY (NOT A BOX) */
-.logo-wrap{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    position:relative;
-}
-
-/* subtle glow behind logo */
-.logo-wrap::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle, rgba(59,130,246,0.25), transparent 60%);
-    z-index:-1;
-}
-
-/* BIG LOGO */
-.logo-wrap svg{
-    width:100%;
-    max-width:720px;
-    height:auto;
-    filter:drop-shadow(0 25px 40px rgba(0,0,0,0.7));
-}
-
-/* TEXT */
-.hero-text{
-    padding:10px;
+    max-width:1000px;
+    text-align:center;
 }
 
 .badge{
     display:inline-block;
     background:#1d4ed8;
-    padding:6px 12px;
+    padding:6px 14px;
     border-radius:999px;
     font-size:12px;
     margin-bottom:14px;
 }
 
-.hero-text h1{
+.hero-content h1{
     font-size:3rem;
-    line-height:1.1;
     margin-bottom:18px;
 }
 
-.hero-text p{
-    font-size:1.1rem;
+.hero-content p{
     color:#cbd5e1;
-    margin-bottom:26px;
+    font-size:1.1rem;
+    margin-bottom:25px;
     line-height:1.6;
 }
 
@@ -151,20 +130,13 @@ nav .links a:hover{
     display:inline-block;
     padding:12px 18px;
     border-radius:8px;
-    text-decoration:none;
     font-weight:bold;
-    margin-right:10px;
+    text-decoration:none;
+    margin:6px;
 }
 
-.btn-primary{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-secondary{
-    background:#ffffff;
-    color:#0b1220;
-}
+.btn-primary{ background:#2563eb; color:white; }
+.btn-secondary{ background:white; color:#0b1220; }
 
 /* SECTIONS */
 section{
@@ -180,7 +152,7 @@ section{
     color:#93c5fd;
 }
 
-/* SERVICES */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -190,14 +162,11 @@ section{
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px;
     padding:20px;
+    border-radius:12px;
 }
 
-.card h3{
-    color:#60a5fa;
-    margin-bottom:10px;
-}
+.card h3{ color:#60a5fa; margin-bottom:10px; }
 
 /* GALLERY */
 .gallery{
@@ -216,13 +185,6 @@ section{
     color:#94a3b8;
 }
 
-/* ABOUT */
-.about{
-    text-align:center;
-    max-width:800px;
-    margin:auto;
-}
-
 /* CONTACT */
 .contact{
     display:grid;
@@ -238,9 +200,7 @@ input, textarea{
     border:none;
 }
 
-textarea{
-    min-height:120px;
-}
+textarea{ min-height:120px; }
 
 /* FOOTER */
 footer{
@@ -253,29 +213,15 @@ footer{
 
 /* MOBILE */
 @media(max-width:900px){
-    .hero-content{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
+    .hero-content h1{ font-size:2.2rem; }
 
-    .hero-text h1{
-        font-size:2.2rem;
-    }
-
-    .logo-wrap svg{
-        max-width:460px;
-    }
-
-    .contact{
-        grid-template-columns:1fr;
-    }
+    .contact{ grid-template-columns:1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <div><strong>MMP</strong></div>
     <div class="links">
@@ -287,81 +233,66 @@ footer{
     </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero" id="home">
 
+    <!-- BACKGROUND LOGO LAYER (NEW STRUCTURE) -->
+    <div class="brand-layer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+            <rect width="800" height="450" fill="#0B1D33"/>
+
+            <path d="M 600 0 Q 650 150 620 300 T 670 450 L 800 450 L 800 0 Z" fill="#005BFF"/>
+            <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#ffffff"/>
+
+            <g transform="translate(300,225)">
+                <circle cx="0" cy="0" r="165" fill="none" stroke="#3b82f6" stroke-width="5"/>
+
+                <path d="
+                    M -110,80 L -110,-80
+                    L -45,15
+                    L 10,-80
+                    L 10,80
+                    M 10,-80
+                    L 65,-80
+                    A 45,45 0 0,1 65,25
+                    L 10,25
+                " fill="none" stroke="#60a5fa" stroke-width="30"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- TEXT OVERLAY -->
     <div class="hero-content">
+        <div class="badge">Serving South Florida</div>
 
-        <!-- LOGO (FULL INTEGRATION) -->
-        <div class="logo-wrap">
+        <h1>Precision Plastic Fabrication for Industrial & Commercial Applications</h1>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+        <p>
+            CNC routing, acrylic fabrication, machine guards, industrial components,
+            and custom engineered plastic solutions built for precision.
+        </p>
 
-                <rect width="800" height="450" fill="#0B1D33"/>
-
-                <path d="M 600 0 Q 650 150 620 300 T 670 450 L 800 450 L 800 0 Z" fill="#005BFF"/>
-                <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#ffffff"/>
-
-                <g transform="translate(300,225)">
-                    <circle cx="0" cy="0" r="155" fill="none" stroke="#3b82f6" stroke-width="5"/>
-
-                    <path d="
-                      M -105,80 L -105,-80
-                      L -45,15
-                      L 10,-80
-                      L 10,80
-                      M 10,-80
-                      L 60,-80
-                      A 45,45 0 0,1 60,25
-                      L 10,25
-                    " fill="none" stroke="#60a5fa" stroke-width="28"/>
-                </g>
-
-            </svg>
-
-        </div>
-
-        <!-- TEXT -->
-        <div class="hero-text">
-
-            <div class="badge">Serving South Florida</div>
-
-            <h1>Precision Plastic Fabrication for Industrial & Commercial Applications</h1>
-
-            <p>
-                CNC routing, acrylic fabrication, machine guards, industrial components,
-                and custom plastic solutions engineered for precision and durability.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">Request a Quote</a>
-            <a href="tel:5615103691" class="btn btn-secondary">Call 561-510-3691</a>
-
-        </div>
-
+        <a class="btn btn-primary" href="#contact">Request a Quote</a>
+        <a class="btn btn-secondary" href="tel:5615103691">Call 561-510-3691</a>
     </div>
 
 </header>
 
-<!-- SERVICES -->
 <section id="services">
     <h2 class="section-title">Services</h2>
-
     <div class="grid">
-        <div class="card"><h3>Custom Fabrication</h3><p>Precision-built plastic components.</p></div>
-        <div class="card"><h3>CNC Routing</h3><p>High-accuracy machining services.</p></div>
-        <div class="card"><h3>Acrylic Fabrication</h3><p>Displays, shields, and custom acrylic work.</p></div>
-        <div class="card"><h3>Polycarbonate Solutions</h3><p>Impact-resistant engineering materials.</p></div>
-        <div class="card"><h3>Machine Guards</h3><p>Safety systems for industrial equipment.</p></div>
-        <div class="card"><h3>Industrial Components</h3><p>Production-ready fabrication parts.</p></div>
-        <div class="card"><h3>Prototype Development</h3><p>Concept to production support.</p></div>
-        <div class="card"><h3>Specialty Fabrication</h3><p>Custom engineering solutions.</p></div>
+        <div class="card"><h3>Custom Fabrication</h3><p>Precision plastic components.</p></div>
+        <div class="card"><h3>CNC Routing</h3><p>High-precision machining.</p></div>
+        <div class="card"><h3>Acrylic Fabrication</h3><p>Displays and protective work.</p></div>
+        <div class="card"><h3>Polycarbonate Solutions</h3><p>Impact-resistant builds.</p></div>
+        <div class="card"><h3>Machine Guards</h3><p>Safety enclosures.</p></div>
+        <div class="card"><h3>Industrial Components</h3><p>Production-ready parts.</p></div>
+        <div class="card"><h3>Prototype Development</h3><p>Concept to production.</p></div>
+        <div class="card"><h3>Specialty Fabrication</h3><p>Custom solutions.</p></div>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
     <h2 class="section-title">Projects</h2>
-
     <div class="gallery">
         <div class="placeholder">Acrylic Displays</div>
         <div class="placeholder">Machine Guards</div>
@@ -372,48 +303,36 @@ footer{
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <h2 class="section-title">About</h2>
-
-    <div class="about">
-        <p>
-            Marlow Modern Plastics provides precision fabrication services across South Florida.
-            We specialize in CNC machining, acrylic fabrication, and custom plastic engineering
-            solutions built with accuracy, speed, and reliability.
-        </p>
-    </div>
+    <p style="text-align:center;max-width:800px;margin:auto;">
+        Marlow Modern Plastics provides precision fabrication services across South Florida.
+        We specialize in CNC machining, acrylic fabrication, and custom plastic engineering.
+    </p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <h2 class="section-title">Contact</h2>
 
     <div class="contact">
-
         <div>
-            <h3>Get In Touch</h3>
             <p>Phone: 561-510-3691</p>
             <p>Email: MarlowModernPlastics@gmail.com</p>
             <p>Location: North Palm Beach, FL 33408</p>
         </div>
 
         <div>
-            <form>
-                <input placeholder="Name">
-                <input placeholder="Email">
-                <input placeholder="Phone">
-                <textarea placeholder="Project Details"></textarea>
-                <button class="btn btn-primary" type="submit">Send Request</button>
-            </form>
+            <input placeholder="Name">
+            <input placeholder="Email">
+            <input placeholder="Phone">
+            <textarea placeholder="Project Details"></textarea>
+            <button class="btn btn-primary">Send Request</button>
         </div>
-
     </div>
 </section>
 
 <footer>
-    <p>Marlow Modern Plastics • South Florida</p>
-    <p>561-510-3691 • MarlowModernPlastics@gmail.com</p>
+    Marlow Modern Plastics • South Florida • 561-510-3691
 </footer>
 
 </body>

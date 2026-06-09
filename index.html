@@ -7,9 +7,10 @@
     <title>Marlow Modern Plastics</title>
     <style>
         :root {
-            --navy-blue: #022047;
-            --electric-blue: #006ce6;
-            --border-light: #e5e7eb;
+            --dark-navy: #061022;
+            --bright-blue: #0066ff;
+            --text-light: #ffffff;
+            --border-light: #e2e8f0;
         }
 
         * {
@@ -20,23 +21,23 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f3f4f6;
-            color: #111827;
+            background-color: #f8fafc;
+            color: #1e293b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* Standalone Header Area for Contact Info */
-        .info-header-strip {
+        /* Separate Top Header Strip for Contacts/Hyperlinks */
+        .contact-header-strip {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border-light);
             padding: 0.8rem 2rem;
             font-size: 0.95rem;
         }
 
-        .info-strip-container {
-            max-width: 1100px;
+        .header-strip-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -45,31 +46,31 @@
             gap: 1rem;
         }
 
-        .comms-links {
+        .header-links {
             display: flex;
             gap: 2rem;
         }
 
-        .comms-links a {
-            color: var(--electric-blue);
+        .header-links a {
+            color: var(--bright-blue);
             text-decoration: none;
             font-weight: 700;
             transition: color 0.15s ease;
         }
 
-        .comms-links a:hover {
-            color: var(--navy-blue);
+        .header-links a:hover {
+            color: var(--dark-navy);
             text-decoration: underline;
         }
 
-        .location-header {
-            color: #4b5563;
+        .header-location {
+            color: #64748b;
             font-weight: 600;
         }
 
-        /* Main Website Layout Frame */
-        .content-container {
-            max-width: 1100px;
+        /* Website Layout Container */
+        .page-wrapper {
+            max-width: 1200px;
             width: 100%;
             margin: auto;
             padding: 2rem;
@@ -79,69 +80,206 @@
             justify-content: center;
         }
 
-        /* True Card Presentation Frame */
-        .web-hero-showcase {
-            width: 100%;
-            max-width: 960px;
-            aspect-ratio: 3 / 2; /* Maintains the exact business card dimensions */
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(2, 32, 71, 0.18);
-            border: 1px solid var(--border-light);
+        /* Main Website Banner - Clean Layout without embedded text lists */
+        .card-style-banner {
+            background-color: var(--dark-navy);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(6, 16, 34, 0.25);
             overflow: hidden;
-            
-            /* Uses a secure, optimized placeholder representing your exact high-contrast layout */
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://w3.org" viewBox="0 0 900 600" width="100%" height="100%"><rect width="900" height="600" fill="%23ffffff"/><path d="M420,0 C490,120 530,240 600,600 L900,600 L900,0 Z" fill="%23022047"/><path d="M425,0 C475,150 515,300 585,600 L610,600 C540,300 500,150 450,0 Z" fill="%23006ce6"/><circle cx="240" cy="230" r="160" fill="none" stroke="%23022047" stroke-width="12"/><path d="M120,150 L120,310 L170,310 L170,210 L240,290 L310,210 L310,310 L360,310 L360,150 L300,150 L240,220 L180,150 Z" fill="%23022047"/><path d="M250,220 L250,380 L300,380 L300,310 L350,310 C400,310 420,280 420,250 C420,220 390,220 350,220 Z M300,250 L340,250 C360,250 370,250 370,265 C370,280 360,280 340,280 L300,280 Z" fill="%23022047"/><path d="M130,120 A 145 145 0 0 1 350,120" fill="none" stroke="%23006ce6" stroke-width="6"/><text x="80" y="475" font-family="system-ui,sans-serif" font-weight="800" font-size="36" fill="%23022047" letter-spacing="1">MARLOW MODERN PLASTICS</text><text x="640" y="320" font-family="system-ui,sans-serif" font-weight="700" font-size="24" fill="%23ffffff" letter-spacing="3">PRECISION</text><text x="635" y="360" font-family="system-ui,sans-serif" font-weight="700" font-size="24" fill="%23ffffff" letter-spacing="3">TOOLING</text></svg>');
-            background-size: cover;
-            background-position: center;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            width: 100%;
+            min-height: 500px;
+            position: relative;
         }
 
-        /* Responsive Scaling Rules for Mobile Screens */
-        @media (max-width: 768px) {
-            .content-container {
-                padding: 1rem;
+        /* Left Column: Deep Navy Panel with Logo and Brand Header only */
+        .brand-details-panel {
+            padding: 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--text-light);
+            z-index: 5;
+        }
+
+        /* High-Contrast MP Logo Layout */
+        .logo-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 2rem;
+        }
+
+        .outer-ring {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .inner-arc {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 3.5px solid transparent;
+            border-top-color: var(--bright-blue);
+            border-radius: 50%;
+            transform: rotate(-35deg);
+        }
+
+        .logo-initials {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--text-light);
+            letter-spacing: -3px;
+            line-height: 1;
+            margin-right: 6px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            color: var(--text-light);
+        }
+
+        /* Right Column: Sleek Tooling and Swoop Ribbon Canvas */
+        .visual-machinery-panel {
+            position: relative;
+            background-color: #0d1b3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Geometric Tooling Background Simulation */
+        .tooling-matrix {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tooling-matrix::before {
+            content: '';
+            width: 160px;
+            height: 160px;
+            border: 4px dashed rgba(0, 102, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        /* Flowing Blue Ribbon Curve */
+        .blue-swoop-divider {
+            position: absolute;
+            left: -1px;
+            top: 0;
+            bottom: 0;
+            width: 95px;
+            background: linear-gradient(145deg, #0084ff, #004fc0);
+            clip-path: polygon(0 0, 35% 0, 100% 100%, 0% 100%);
+            z-index: 2;
+        }
+
+        /* Responsive Mobile Layout Adjustments */
+        @media (max-width: 900px) {
+            .card-style-banner {
+                grid-template-columns: 1fr;
+                min-height: auto;
             }
-            
-            .info-strip-container {
+            .visual-machinery-panel {
+                height: 220px;
+                order: -1; /* Flips close-up tooling graphics to the top on mobile views */
+            }
+            .blue-swoop-divider {
+                width: 100%;
+                height: 45px;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 75%);
+            }
+            .brand-details-panel {
+                padding: 3.5rem 2rem;
+                text-align: center;
+                align-items: center;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+            .header-strip-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 0.6rem;
+                gap: 0.5rem;
                 text-align: center;
             }
-
-            .comms-links {
+            .header-links {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.4rem;
             }
-
-            .web-hero-showcase {
-                border-radius: 12px;
-                box-shadow: 0 10px 25px rgba(2, 32, 71, 0.1);
+            .page-wrapper {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Extracted Standalone Header & Hyperlink Systems -->
-    <div class="info-header-strip">
-        <div class="info-strip-container">
-            <div class="location-header">📍 Headquarters: North Palm Beach, FL 33408</div>
-            <div class="comms-links">
-                <a href="tel:561-510-3691">📞 Call Us: 561-510-3691</a>
+    <!-- Separate Header & Link System -->
+    <div class="contact-header-strip">
+        <div class="header-strip-container">
+            <div class="header-location">📍 North Palm Beach, FL 33408</div>
+            <div class="header-links">
+                <a href="tel:561-510-3691">📞 Call Production: 561-510-3691</a>
                 <a href="mailto:Marlowmodernplastics@gmail.com">✉️ Email Us: Marlowmodernplastics@gmail.com</a>
             </div>
         </div>
     </div>
 
-    <!-- Website Workspace Container -->
-    <main class="content-container">
-        <!-- This container scales the card format cleanly to any browser window size -->
-        <div class="web-hero-showcase"></div>
+    <!-- Main Website Presentation Container -->
+    <main class="page-wrapper">
+        <div class="card-style-banner">
+            
+            <!-- Left Side Panel Layout -->
+            <div class="brand-details-panel">
+                <div class="logo-container">
+                    <div class="outer-ring">
+                        <div class="inner-arc"></div>
+                        <span class="logo-initials">MP</span>
+                    </div>
+                </div>
+
+                <h1 class="main-title">MARLOW MODERN PLASTICS</h1>
+            </div>
+
+            <!-- Right Side Panel Layout -->
+            <div class="visual-machinery-panel">
+                <div class="blue-swoop-divider"></div>
+                
+                <!-- Geometric shapes representing close-up precision tool machinery -->
+                <div class="tooling-matrix">
+                    <div style="position: absolute; transform: rotate(-45deg); font-family: monospace; font-size: 0.75rem; color: var(--bright-blue); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">
+                        Precision Tooling
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer style="text-align: center; padding: 1.5rem; color: #6b7280; font-size: 0.85rem; background: #ffffff; border-top: 1px solid var(--border-light);">
-        &copy; 2026 Marlow Modern Plastics. All rights reserved.
+    <footer style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem; margin-top: auto; background-color: #ffffff; border-top: 1px solid var(--border-light);">
+        &copy; 2026 Marlow Modern Plastics &bull; High-Performance Engineering.
     </footer>
 
 </body>

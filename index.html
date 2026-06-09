@@ -59,21 +59,24 @@ nav .links a:hover{
     overflow:hidden;
 }
 
+/* CNC MACHINE BACKGROUND */
 .hero::before{
     content:"";
     position:absolute;
     inset:0;
-    background:url("https://images.unsplash.com/photo-1581093458791-9d42e0f1c8a6?auto=format&fit=crop&w=1600&q=80");
+    background:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80");
     background-size:cover;
     background-position:center;
-    opacity:0.12;
+    opacity:0.14;
+    filter:contrast(1.1) brightness(0.7);
 }
 
+/* BLUE INDUSTRIAL OVERLAY */
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(135deg,#0b1220 40%,#0b2a55);
-    opacity:0.85;
+    background:linear-gradient(135deg,#0b1220 35%,#0b2a55);
+    opacity:0.88;
 }
 
 .hero-content{
@@ -81,15 +84,24 @@ nav .links a:hover{
     max-width:1200px;
     width:100%;
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
     align-items:center;
 }
 
-/* LOGO */
+/* LOGO — NOW HERO DOMINANT ELEMENT */
+.logo-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .logo-box svg{
     width:100%;
-    max-width:450px;
+    max-width:650px;   /* 🔥 BIGGER LOGO */
+    height:auto;
+    opacity:0.95;
+    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6));
 }
 
 /* TEXT */
@@ -226,12 +238,16 @@ footer{
         text-align:center;
     }
 
-    .contact{
-        grid-template-columns:1fr;
-    }
-
     .hero-text h1{
         font-size:2.2rem;
+    }
+
+    .logo-box svg{
+        max-width:420px;
+    }
+
+    .contact{
+        grid-template-columns:1fr;
     }
 }
 </style>
@@ -257,7 +273,7 @@ footer{
 
     <div class="hero-content">
 
-        <!-- LOGO -->
+        <!-- BIG INTEGRATED LOGO -->
         <div class="logo-box">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
@@ -268,18 +284,18 @@ footer{
                 <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#ffffff"/>
 
                 <g transform="translate(300,225)">
-                    <circle cx="0" cy="0" r="140" fill="none" stroke="#3b82f6" stroke-width="6"/>
+                    <circle cx="0" cy="0" r="150" fill="none" stroke="#3b82f6" stroke-width="5"/>
 
                     <path d="
-                      M -90,70 L -90,-70
-                      L -40,10
-                      L 10,-70
-                      L 10,70
-                      M 10,-70
-                      L 50,-70
-                      A 45,45 0 0,1 50,20
-                      L 10,20
-                    " fill="none" stroke="#60a5fa" stroke-width="24"/>
+                      M -100,75 L -100,-75
+                      L -45,15
+                      L 10,-75
+                      L 10,75
+                      M 10,-75
+                      L 55,-75
+                      A 45,45 0 0,1 55,25
+                      L 10,25
+                    " fill="none" stroke="#60a5fa" stroke-width="26"/>
                 </g>
 
             </svg>

@@ -1,3 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlow Modern Plastics | Industrial Tooling & Polymer Manufacturing</title>
+    <style>
+        :root {
+            --primary: #0082cb;
+            --primary-dark: #005a92;
+            --secondary: #0a1128;
+            --slate-light: #f1f5f9;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Full-Width Global Top Information Strip */
+        .utility-strip {
+            background-color: var(--secondary);
+            color: #ffffff;
+            font-size: 0.85rem;
+            border-bottom: 3px solid var(--primary);
+            padding: 0.75rem 4rem;
+        }
+
+        .utility-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .utility-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .utility-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Enterprise Header Navigation Layout */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 4rem;
+        }
+
+        /* High-Contrast Recreated SVG Style Circular Logo Component */
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-circle-badge {
+            width: 52px;
+            height: 52px;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #ffffff;
+        }
+
+        .logo-inner-emblem {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: -1px;
+            z-index: 2;
+        }
+
+        .logo-inner-emblem span {
+            color: var(--primary);
+        }
+
+        .logo-arc-line {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 2px solid transparent;
+            border-top-color: #00d2ff;
+            border-radius: 50%;
+            transform: rotate(-45deg);
+        }
+
+        .logo-title-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-title-text span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 130, 203, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Screen-Wide Modern Industrial Hero Showcase */
+        .hero-banner {
+            position: relative;
+            background: #0f172a;
+            color: white;
+            padding: 10rem 4rem;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Simulates an advanced close-up high-contrast tooling design backdrop */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 85% 50%, rgba(0, 130, 203, 0.15) 0%, transparent 45%),
+                linear-gradient(115deg, var(--secondary) 40%, rgba(15, 23, 42, 0.9) 100%);
+            z-index: 1;
+        }
+
+        /* Abstract geometric engineering grid overlay lines */
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: 2;
+            opacity: 0.7;
+        }
+
+        .hero-layout-wrapper {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-headline-block h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-headline-block h1 span {
+            color: var(--primary);
+            background: linear-gradient(to right, #ffffff, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-headline-block p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            max-width: 580px;
+        }
+
+        /* Blueprint Style Technical Close-Up Frame Simulation */
+        .hero-graphics-frame {
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .technical-spec-pill {
+            align-self: flex-start;
+            background: rgba(0, 130, 203, 0.2);
+            border: 1px solid var(--primary);
+            color: #00d2ff;
+            font-family: monospace;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        /* Core Content Sections Layout */
+        .main-section {
+            padding: 7.5rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header-group {
+            margin-bottom: 4.5rem;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-main-heading {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        /* Industrial Grid Capabilities Array */
+        .capabilities-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-showcase-card {
+            background: #ffffff;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3.5rem 2.5rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(10,17,40,0.08);
+        }
+
+        .card-mechanical-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .feature-showcase-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .feature-showcase-card p {
+            color: var(--text-muted);
+        }
+
+        /* Technical Specifications Table Frame */
+        .table-section-bg {
+            background-color: #f8fafc;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            margin-top: 2rem;
+        }
+
+        .spec-table th {
+            background: var(--secondary);
+            color: white;
+            text-align: left;
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .spec-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        .spec-table tr:nth-child(even) {
+            background: #fdfefe;
+        }
+
+        /* Integrated B2B Pricing Form Block */
+        .split-form-layout {
+            display: grid;
 
 <!DOCTYPE html>
 <html lang="en">

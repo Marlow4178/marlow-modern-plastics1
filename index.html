@@ -27,12 +27,12 @@ nav{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(11,18,32,0.9);
-    backdrop-filter:blur(10px);
+    background:rgba(11,18,32,0.75);
+    backdrop-filter:blur(14px);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 30px;
+    padding:14px 28px;
     z-index:1000;
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
@@ -51,90 +51,109 @@ nav .links a:hover{
 /* HERO */
 .hero{
     min-height:100vh;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
     padding:120px 20px 60px;
     overflow:hidden;
 }
 
-/* CNC MACHINE BACKGROUND */
+/* CNC MACHINE BACKGROUND (primary layer) */
 .hero::before{
     content:"";
     position:absolute;
     inset:0;
-    background:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80");
+    background:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=80");
     background-size:cover;
     background-position:center;
-    opacity:0.14;
-    filter:contrast(1.1) brightness(0.7);
+    opacity:0.18;
+    filter:contrast(1.2) brightness(0.55);
 }
 
 /* BLUE INDUSTRIAL OVERLAY */
-.hero-overlay{
+.hero::after{
+    content:"";
     position:absolute;
     inset:0;
     background:linear-gradient(135deg,#0b1220 35%,#0b2a55);
-    opacity:0.88;
+    opacity:0.85;
 }
 
+/* HERO GRID */
 .hero-content{
     position:relative;
-    max-width:1200px;
+    z-index:2;
+    max-width:1250px;
     width:100%;
     display:grid;
-    grid-template-columns:1.2fr 1fr;
+    grid-template-columns:1.3fr 1fr;
     gap:40px;
     align-items:center;
 }
 
-/* LOGO — NOW HERO DOMINANT ELEMENT */
-.logo-box{
+/* LOGO = HERO IDENTITY (NOT A BOX) */
+.logo-wrap{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:20px;
+    position:relative;
 }
 
-.logo-box svg{
+/* subtle glow behind logo */
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(59,130,246,0.25), transparent 60%);
+    z-index:-1;
+}
+
+/* BIG LOGO */
+.logo-wrap svg{
     width:100%;
-    max-width:650px;   /* 🔥 BIGGER LOGO */
+    max-width:720px;
     height:auto;
-    opacity:0.95;
-    filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+    filter:drop-shadow(0 25px 40px rgba(0,0,0,0.7));
 }
 
 /* TEXT */
-.hero-text h1{
-    font-size:3rem;
-    margin-bottom:20px;
-    color:#ffffff;
-}
-
-.hero-text p{
-    font-size:1.1rem;
-    color:#cbd5e1;
-    margin-bottom:25px;
-    line-height:1.6;
+.hero-text{
+    padding:10px;
 }
 
 .badge{
     display:inline-block;
     background:#1d4ed8;
     padding:6px 12px;
-    border-radius:20px;
+    border-radius:999px;
     font-size:12px;
-    margin-bottom:15px;
+    margin-bottom:14px;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero-text p{
+    font-size:1.1rem;
+    color:#cbd5e1;
+    margin-bottom:26px;
+    line-height:1.6;
 }
 
 /* BUTTONS */
 .btn{
     display:inline-block;
     padding:12px 18px;
-    margin-right:10px;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
+    margin-right:10px;
 }
 
 .btn-primary{
@@ -155,9 +174,9 @@ section{
 }
 
 .section-title{
+    text-align:center;
     font-size:2rem;
     margin-bottom:40px;
-    text-align:center;
     color:#93c5fd;
 }
 
@@ -165,19 +184,19 @@ section{
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
+    gap:18px;
 }
 
 .card{
     background:rgba(255,255,255,0.05);
-    padding:20px;
-    border-radius:12px;
     border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:20px;
 }
 
 .card h3{
-    margin-bottom:10px;
     color:#60a5fa;
+    margin-bottom:10px;
 }
 
 /* GALLERY */
@@ -195,13 +214,13 @@ section{
     align-items:center;
     justify-content:center;
     color:#94a3b8;
-    font-size:14px;
 }
 
 /* ABOUT */
 .about{
     text-align:center;
     max-width:800px;
+    margin:auto;
 }
 
 /* CONTACT */
@@ -223,6 +242,7 @@ textarea{
     min-height:120px;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:40px;
@@ -242,8 +262,8 @@ footer{
         font-size:2.2rem;
     }
 
-    .logo-box svg{
-        max-width:420px;
+    .logo-wrap svg{
+        max-width:460px;
     }
 
     .contact{
@@ -269,12 +289,11 @@ footer{
 
 <!-- HERO -->
 <header class="hero" id="home">
-    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-        <!-- BIG INTEGRATED LOGO -->
-        <div class="logo-box">
+        <!-- LOGO (FULL INTEGRATION) -->
+        <div class="logo-wrap">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
 
@@ -284,18 +303,18 @@ footer{
                 <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#ffffff"/>
 
                 <g transform="translate(300,225)">
-                    <circle cx="0" cy="0" r="150" fill="none" stroke="#3b82f6" stroke-width="5"/>
+                    <circle cx="0" cy="0" r="155" fill="none" stroke="#3b82f6" stroke-width="5"/>
 
                     <path d="
-                      M -100,75 L -100,-75
+                      M -105,80 L -105,-80
                       L -45,15
-                      L 10,-75
-                      L 10,75
-                      M 10,-75
-                      L 55,-75
-                      A 45,45 0 0,1 55,25
+                      L 10,-80
+                      L 10,80
+                      M 10,-80
+                      L 60,-80
+                      A 45,45 0 0,1 60,25
                       L 10,25
-                    " fill="none" stroke="#60a5fa" stroke-width="26"/>
+                    " fill="none" stroke="#60a5fa" stroke-width="28"/>
                 </g>
 
             </svg>
@@ -307,12 +326,11 @@ footer{
 
             <div class="badge">Serving South Florida</div>
 
-            <h1>Precision Plastic Fabrication for Industrial & Commercial Needs</h1>
+            <h1>Precision Plastic Fabrication for Industrial & Commercial Applications</h1>
 
             <p>
-                Custom CNC routing, acrylic fabrication, machine guards,
-                industrial components, and precision plastic solutions
-                built for performance and durability.
+                CNC routing, acrylic fabrication, machine guards, industrial components,
+                and custom plastic solutions engineered for precision and durability.
             </p>
 
             <a href="#contact" class="btn btn-primary">Request a Quote</a>
@@ -321,6 +339,7 @@ footer{
         </div>
 
     </div>
+
 </header>
 
 <!-- SERVICES -->
@@ -328,14 +347,14 @@ footer{
     <h2 class="section-title">Services</h2>
 
     <div class="grid">
-        <div class="card"><h3>Custom Fabrication</h3><p>Precision plastic components built to spec.</p></div>
-        <div class="card"><h3>CNC Routing</h3><p>High-accuracy machining and cutting.</p></div>
+        <div class="card"><h3>Custom Fabrication</h3><p>Precision-built plastic components.</p></div>
+        <div class="card"><h3>CNC Routing</h3><p>High-accuracy machining services.</p></div>
         <div class="card"><h3>Acrylic Fabrication</h3><p>Displays, shields, and custom acrylic work.</p></div>
-        <div class="card"><h3>Polycarbonate Solutions</h3><p>Durable impact-resistant applications.</p></div>
-        <div class="card"><h3>Machine Guards</h3><p>Safety enclosures and protective barriers.</p></div>
+        <div class="card"><h3>Polycarbonate Solutions</h3><p>Impact-resistant engineering materials.</p></div>
+        <div class="card"><h3>Machine Guards</h3><p>Safety systems for industrial equipment.</p></div>
         <div class="card"><h3>Industrial Components</h3><p>Production-ready fabrication parts.</p></div>
-        <div class="card"><h3>Prototype Development</h3><p>From concept to functional prototype.</p></div>
-        <div class="card"><h3>Specialty Fabrication</h3><p>Custom one-off engineering solutions.</p></div>
+        <div class="card"><h3>Prototype Development</h3><p>Concept to production support.</p></div>
+        <div class="card"><h3>Specialty Fabrication</h3><p>Custom engineering solutions.</p></div>
     </div>
 </section>
 
@@ -359,10 +378,9 @@ footer{
 
     <div class="about">
         <p>
-            Marlow Modern Plastics provides precision fabrication services
-            across South Florida. We specialize in custom plastic components,
-            CNC machining, acrylic solutions, and industrial fabrication work
-            with a focus on quality, speed, and reliability.
+            Marlow Modern Plastics provides precision fabrication services across South Florida.
+            We specialize in CNC machining, acrylic fabrication, and custom plastic engineering
+            solutions built with accuracy, speed, and reliability.
         </p>
     </div>
 </section>

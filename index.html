@@ -1,55 +1,294 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics</title>
+    <title>Marlow Modern Plastics | High-Performance Polymer Solutions</title>
     <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #ffffff;
         }
-        .container {
+
+        /* Navigation */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Services / Products Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.7rem;
+            color: var(--secondary);
+        }
+
+        /* Contact Section */
+        .bg-light {
+            background-color: var(--light);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: 2px solid var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #1e293b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: #64748b;
             text-align: center;
             padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 {
-            color: #0284c7;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: #64748b;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .badge {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
             font-size: 0.875rem;
-            font-weight: 600;
-            margin-top: 1rem;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Marlow Modern Plastics</h1>
-        <p>Our brand new website is currently under construction. Check back soon for high-quality polymer solutions and manufacturing updates.</p>
-        <span class="badge">Coming Soon</span>
-    </div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Marlow <span>Plastics</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Custom Polymer Solutions Engineered for Performance</h1>
+            <p>Providing cutting-edge manufacturing, custom plastic molding, and premium fabrication solutions for global commercial applications.</p>
+            <a href="#contact" class="cta-btn">Request a Quote</a>
+        </div>
+    </section>
+
+    <section id="capabilities" class="section">
+        <h2 class="section-title">Our Manufacturing Capabilities</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>Precision Injection Molding</h3>
+                <p>High-volume components crafted with strict tolerances using industrial thermo-polymers.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛠️</div>
+                <h3>Custom Fabrication</h3>
+                <p>Tailored cutting, welding, and assembly solutions designed directly from your blueprint specifications.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧪</div>
+                <h3>Material Compounding</h3>
+                <p>Specialized material blends designed for extreme durability, heat resistance, or flexible application.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <h2 class="section-title">Connect with a Specialist</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" required placeholder="johndoe@company.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Project Requirements</label>
+                <textarea id="message" rows="5" required placeholder="Tell us about your production quantities or material needs..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Marlow Modern Plastics. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

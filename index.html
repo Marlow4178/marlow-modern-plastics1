@@ -1,18 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics | Industrial Tooling & Polymer Manufacturing</title>
+    <title>Marlow Modern Plastics</title>
     <style>
         :root {
-            --primary: #0082cb;
-            --primary-dark: #005a92;
-            --secondary: #0a1128;
-            --slate-light: #f1f5f9;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --border: #e2e8f0;
+            --navy: #0a1128;
+            --blue: #0076df;
+            --light-bg: #f4f7fa;
+            --text-dark: #1e2530;
+            --text-muted: #64748b;
         }
 
         * {
@@ -23,374 +22,17 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-bg);
             color: var(--text-dark);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        /* Full-Width Global Top Information Strip */
-        .utility-strip {
-            background-color: var(--secondary);
-            color: #ffffff;
-            font-size: 0.85rem;
-            border-bottom: 3px solid var(--primary);
-            padding: 0.75rem 4rem;
-        }
-
-        .utility-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .utility-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .utility-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .utility-links a:hover {
-            color: #ffffff;
-        }
-
-        /* Enterprise Header Navigation Layout */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 4rem;
-        }
-
-        /* High-Contrast Recreated SVG Style Circular Logo Component */
-        .brand-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-        }
-
-        .logo-circle-badge {
-            width: 52px;
-            height: 52px;
-            border: 3px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: #ffffff;
-        }
-
-        .logo-inner-emblem {
-            font-size: 1.35rem;
-            font-weight: 900;
-            color: var(--secondary);
-            letter-spacing: -1px;
-            z-index: 2;
-        }
-
-        .logo-inner-emblem span {
-            color: var(--primary);
-        }
-
-        .logo-arc-line {
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            border: 2px solid transparent;
-            border-top-color: #00d2ff;
-            border-radius: 50%;
-            transform: rotate(-45deg);
-        }
-
-        .logo-title-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--secondary);
-            letter-spacing: -0.5px;
-        }
-
-        .logo-title-text span {
-            color: var(--primary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary);
-            color: white !important;
-            padding: 0.6rem 1.25rem;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0, 130, 203, 0.2);
-        }
-
-        .nav-cta:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Screen-Wide Modern Industrial Hero Showcase */
-        .hero-banner {
-            position: relative;
-            background: #0f172a;
-            color: white;
-            padding: 10rem 4rem;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Simulates an advanced close-up high-contrast tooling design backdrop */
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 85% 50%, rgba(0, 130, 203, 0.15) 0%, transparent 45%),
-                linear-gradient(115deg, var(--secondary) 40%, rgba(15, 23, 42, 0.9) 100%);
-            z-index: 1;
-        }
-
-        /* Abstract geometric engineering grid overlay lines */
-        .hero-banner::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
-            background-size: 24px 24px;
-            z-index: 2;
-            opacity: 0.7;
-        }
-
-        .hero-layout-wrapper {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero-headline-block h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-headline-block h1 span {
-            color: var(--primary);
-            background: linear-gradient(to right, #ffffff, #00d2ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-headline-block p {
-            font-size: 1.25rem;
-            color: #cbd5e1;
-            margin-bottom: 3rem;
-            max-width: 580px;
-        }
-
-        /* Blueprint Style Technical Close-Up Frame Simulation */
-        .hero-graphics-frame {
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(8px);
-            border-radius: 12px;
-            padding: 3rem;
-            position: relative;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
         }
 
-        .technical-spec-pill {
-            align-self: flex-start;
-            background: rgba(0, 130, 203, 0.2);
-            border: 1px solid var(--primary);
-            color: #00d2ff;
-            font-family: monospace;
-            font-size: 0.85rem;
-            padding: 0.3rem 0.75rem;
-            border-radius: 4px;
-        }
-
-        /* Core Content Sections Layout */
-        .main-section {
-            padding: 7.5rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header-group {
-            margin-bottom: 4.5rem;
-        }
-
-        .section-tag {
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-main-heading {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--secondary);
-        }
-
-        /* Industrial Grid Capabilities Array */
-        .capabilities-showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-
-        .feature-showcase-card {
-            background: #ffffff;
-            border-top: 4px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border-left: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 3.5rem 2.5rem;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .feature-showcase-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(10,17,40,0.08);
-        }
-
-        .card-mechanical-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .feature-showcase-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .feature-showcase-card p {
-            color: var(--text-muted);
-        }
-
-        /* Technical Specifications Table Frame */
-        .table-section-bg {
-            background-color: #f8fafc;
-        }
-
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
-            margin-top: 2rem;
-        }
-
-        .spec-table th {
-            background: var(--secondary);
-            color: white;
-            text-align: left;
-            padding: 1.2rem 1.5rem;
-            font-weight: 600;
-        }
-
-        .spec-table td {
-            padding: 1.2rem 1.5rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-muted);
-        }
-
-        .spec-table tr:nth-child(even) {
-            background: #fdfefe;
-        }
-
-        /* Integrated B2B Pricing Form Block */
-        .split-form-layout {
-            display: grid;
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics | High-Performance Polymer Solutions</title>
-    <style>
-        :root {
-            --primary: #0284c7;
-            --primary-dark: #0369a1;
-            --secondary: #0f172a;
-            --light: #f8fafc;
-            --text: #334155;
-            --border: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        /* Navigation */
+        /* Clean Corporate Navigation */
         header {
-            background: white;
-            border-bottom: 1px solid var(--border);
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -399,186 +41,208 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary);
+        .nav-links {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
-        nav a {
+        .nav-links a {
             text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        .nav-links a:hover {
+            color: var(--blue);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
+        /* Full Website Main Layout Container */
+        .main-showcase {
+            max-width: 1200px;
+            width: 100%;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            flex: 1;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Premium Website Feature Section (Replicating the Preview Theme) */
+        .showcase-banner {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.06);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 500px;
+            border: 1px solid #eef2f6;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        /* Left Side Panel: High-Contrast Branding Details */
+        .branding-panel {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: #ffffff;
+        }
+
+        /* Recreated Precision MP High-Contrast Logo Graphic Layout */
+        .logo-box {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2.5rem;
+            width: fit-content;
+        }
+
+        .logo-circle-graphic {
+            width: 90px;
+            height: 90px;
+            border: 4px solid var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-circle-graphic::after {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 3px solid transparent;
+            border-top-color: var(--blue);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+        }
+
+        .logo-letters {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-right: 4px;
+        }
+
+        /* Business Text Formatting */
+        .company-name {
+            font-size: 2.2rem;
             font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -0.5px;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        .cta-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Services / Products Section */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            margin-bottom: 0.7rem;
-            color: var(--secondary);
-        }
-
-        /* Contact Section */
-        .bg-light {
-            background-color: var(--light);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .contact-info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            color: var(--text-dark);
             font-weight: 500;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-family: inherit;
+        .contact-info-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
-            outline: 2px solid var(--primary);
+        .label-text {
+            color: var(--text-muted);
+            font-weight: 400;
+            width: 65px;
+            display: inline-block;
         }
 
-        .submit-btn {
-            width: 100%;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.75rem;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
+        /* Right Side Panel: Sleek Tooling Graphics Layout */
+        .graphics-panel {
+            position: relative;
+            background-color: #eef5fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .submit-btn:hover {
-            background: #1e293b;
+        /* Elegant Abstract Mechanical Tooling Simulation Backdrop */
+        .graphics-panel::before {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 24px solid #ffffff;
+            border-radius: 12px;
+            transform: rotate(45deg);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
         }
 
-        /* Footer */
-        footer {
-            background: var(--secondary);
-            color: #64748b;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.875rem;
-            border-top: 1px solid #1e293b;
+        .graphics-panel::after {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 6px dashed var(--blue);
+            border-radius: 50%;
+            opacity: 0.25;
+        }
+
+        /* The Gorgeous Flowing Blue Divider Wave Curve */
+        .swoop-divider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            background: linear-gradient(to bottom, #0084ff, #004fc0);
+            clip-path: polygon(0 0, 30% 0, 100% 100%, 0% 100%);
+            z-index: 2;
+        }
+
+        /* Responsive Mobile Scaling Fixes */
+        @media (max-width: 900px) {
+            .showcase-banner {
+                grid-template-columns: 1fr;
+            }
+            .graphics-panel {
+                height: 250px;
+                order: -1; /* Puts graphics on top for mobile views */
+            }
+            .swoop-divider {
+                width: 100%;
+                height: 40px;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 70%);
+            }
+            .branding-panel {
+                padding: 2.5rem 1.5rem;
+            }
+            .company-name {
+                font-size: 1.8rem;
+            }
+            .main-showcase {
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+            .nav-container {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -586,67 +250,48 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">Marlow <span>Plastics</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#capabilities">Capabilities</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div style="font-weight: 800; color: var(--navy); font-size: 1.2rem;">Marlow Plastics</div>
+            <ul class="nav-links">
+                <li><a href="mailto:marlow@modernplastics.com">Email Us</a></li>
+                <li><a href="tel:561-510-3691">Call Production</a></li>
+            </ul>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Custom Polymer Solutions Engineered for Performance</h1>
-            <p>Providing cutting-edge manufacturing, custom plastic molding, and premium fabrication solutions for global commercial applications.</p>
-            <a href="#contact" class="cta-btn">Request a Quote</a>
+    <main class="main-showcase">
+        <div class="showcase-banner">
+            
+            <!-- Left Side: Clean high-contrast card styling expanded to webpage layout -->
+            <div class="branding-panel">
+                <div class="logo-box">
+                    <div class="logo-circle-graphic">
+                        <span class="logo-letters">MP</span>
+                    </div>
+                </div>
+
+                <h1 class="company-name">MARLOW MODERN PLASTICS</h1>
+
+                <ul class="contact-info-list">
+                    <li><span class="label-text">email:</span> marlow@modernplastics.com</li>
+                    <li><span class="label-text">Phone:</span> 561-510-3691</li>
+                    <li><span class="label-text">Address:</span> North Palm Beach, FL 33408</li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Sleek structural machinery graphic canvas -->
+            <div class="graphics-panel">
+                <div class="swoop-divider"></div>
+                <!-- Abstract interior element representing high precision engineering components -->
+                <div style="position: relative; z-index: 1; font-weight: 700; color: var(--blue); letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase;">
+                    Precision Tooling Facility
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
-    <section id="capabilities" class="section">
-        <h2 class="section-title">Our Manufacturing Capabilities</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">⚙️</div>
-                <h3>Precision Injection Molding</h3>
-                <p>High-volume components crafted with strict tolerances using industrial thermo-polymers.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🛠️</div>
-                <h3>Custom Fabrication</h3>
-                <p>Tailored cutting, welding, and assembly solutions designed directly from your blueprint specifications.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🧪</div>
-                <h3>Material Compounding</h3>
-                <p>Specialized material blends designed for extreme durability, heat resistance, or flexible application.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section bg-light">
-        <h2 class="section-title">Connect with a Specialist</h2>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required placeholder="John Doe">
-            </div>
-            <div class="form-group">
-                <label for="email">Work Email</label>
-                <input type="email" id="email" required placeholder="johndoe@company.com">
-            </div>
-            <div class="form-group">
-                <label for="message">Project Requirements</label>
-                <textarea id="message" rows="5" required placeholder="Tell us about your production quantities or material needs..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Submit Inquiry</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Marlow Modern Plastics. All rights reserved.</p>
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; margin-top: auto;">
+        &copy; 2026 Marlow Modern Plastics. All rights reserved.
     </footer>
 
 </body>

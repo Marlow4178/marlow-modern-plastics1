@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,281 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marlow Modern Plastics</title>
     <style>
-        :root {
-            --dark-navy: #061022;
-            --bright-blue: #0066ff;
-            --text-light: #ffffff;
-            --border-light: #e2e8f0;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            padding: 20px;
         }
 
-        /* Separate Top Header Strip for Contacts/Hyperlinks */
-        .contact-header-strip {
+        /* Business Card Layout Container */
+        .card-container {
             background-color: #ffffff;
-            border-bottom: 1px solid var(--border-light);
-            padding: 0.8rem 2rem;
-            font-size: 0.95rem;
-        }
-
-        .header-strip-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .header-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .header-links a {
-            color: var(--bright-blue);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.15s ease;
-        }
-
-        .header-links a:hover {
-            color: var(--dark-navy);
-            text-decoration: underline;
-        }
-
-        .header-location {
-            color: #64748b;
-            font-weight: 600;
-        }
-
-        /* Website Layout Container */
-        .page-wrapper {
-            max-width: 1200px;
             width: 100%;
-            margin: auto;
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Main Website Banner - Clean Layout without embedded text lists */
-        .card-style-banner {
-            background-color: var(--dark-navy);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(6, 16, 34, 0.25);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            width: 100%;
-            min-height: 500px;
+            max-width: 900px;
+            aspect-ratio: 1.58 / 1; /* Standard business card proportions */
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             position: relative;
+            overflow: hidden;
+            display: flex;
         }
 
-        /* Left Column: Deep Navy Panel with Logo and Brand Header only */
-        .brand-details-panel {
-            padding: 4.5rem;
+        /* Left Content Area */
+        .left-panel {
+            width: 55%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            color: var(--text-light);
-            z-index: 5;
+            justify-content: space-between;
+            padding: 7% 5% 8% 7%;
+            z-index: 3;
         }
 
-        /* High-Contrast MP Logo Layout */
-        .logo-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin-bottom: 2rem;
+        /* Logo Construction */
+        .logo-wrapper {
+            width: 80%;
+            max-width: 280px;
+            margin-bottom: 20px;
         }
 
-        .outer-ring {
+        .mp-logo-svg {
+            width: 100%;
+            height: auto;
+            fill: #0a2540;
+        }
+
+        /* Typography */
+        .company-name {
+            color: #0a2540;
+            font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: auto;
+        }
+
+        /* Right Structural/Visual Area */
+        .right-panel {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Geometric Swash Curves matching the card */
+        .curve-accent-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border: 4px solid rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            background: #0056b3;
+            clip-path: ellipse(95% 100% at 95% 50%);
+            z-index: 1;
         }
 
-        .inner-arc {
+        .curve-accent-light {
             position: absolute;
-            width: 90%;
-            height: 90%;
-            border: 3.5px solid transparent;
-            border-top-color: var(--bright-blue);
-            border-radius: 50%;
-            transform: rotate(-35deg);
-        }
-
-        .logo-initials {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--text-light);
-            letter-spacing: -3px;
-            line-height: 1;
-            margin-right: 6px;
-        }
-
-        .main-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-            color: var(--text-light);
-        }
-
-        /* Right Column: Sleek Tooling and Swoop Ribbon Canvas */
-        .visual-machinery-panel {
-            position: relative;
-            background-color: #0d1b3a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        /* Geometric Tooling Background Simulation */
-        .tooling-matrix {
-            position: relative;
-            width: 260px;
-            height: 260px;
-            border: 2px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            transform: rotate(45deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tooling-matrix::before {
-            content: '';
-            width: 160px;
-            height: 160px;
-            border: 4px dashed rgba(0, 102, 255, 0.3);
-            border-radius: 50%;
-        }
-
-        /* Flowing Blue Ribbon Curve */
-        .blue-swoop-divider {
-            position: absolute;
-            left: -1px;
             top: 0;
-            bottom: 0;
-            width: 95px;
-            background: linear-gradient(145deg, #0084ff, #004fc0);
-            clip-path: polygon(0 0, 35% 0, 100% 100%, 0% 100%);
+            left: 4%;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            clip-path: ellipse(95% 100% at 95% 50%);
             z-index: 2;
         }
 
-        /* Responsive Mobile Layout Adjustments */
-        @media (max-width: 900px) {
-            .card-style-banner {
-                grid-template-columns: 1fr;
-                min-height: auto;
+        /* Machining Backdrop Window */
+        .machining-graphic-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 90%;
+            height: 100%;
+            background-color: #d1d5db;
+            /* Embedded clean CSS illustration representing the mill/lathe mechanics from the card */
+            background-image: 
+                linear-gradient(90deg, transparent 40%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.15) 60%, transparent 60%),
+                linear-gradient(0deg, #999 2px, transparent 2px),
+                linear-gradient(90deg, #bbb 2px, transparent 2px),
+                radial-gradient(circle at 70% 30%, #ffffff 0%, transparent 60%),
+                linear-gradient(135deg, #e5e7eb 0%, #9ca3af 100%);
+            background-size: 100% 100%, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
+            z-index: 0;
+            opacity: 0.95;
+        }
+
+        /* Simulated industrial metallic components using CSS shapes */
+        .spindle-shaft {
+            position: absolute;
+            top: 0;
+            right: 20%;
+            width: 22%;
+            height: 45%;
+            background: linear-gradient(90deg, #777 0%, #ddd 30%, #fff 50%, #bbb 75%, #555 100%);
+            border-bottom: 8px solid #444;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.2);
+        }
+
+        .spindle-ridge {
+            position: absolute;
+            bottom: 10%;
+            right: 17%;
+            width: 28%;
+            height: 10%;
+            background: linear-gradient(90deg, #555, #ccc, #fff, #aaa, #333);
+            border-radius: 3px;
+        }
+
+        .chuckle-block {
+            position: absolute;
+            bottom: 15%;
+            right: 10%;
+            width: 40%;
+            height: 32%;
+            background: linear-gradient(0deg, #666 0%, #e5e7eb 25%, #9ca3af 50%, #f3f4f6 80%, #444 100%);
+            border: 1px solid #777;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .dial-gauge {
+            position: absolute;
+            bottom: 25%;
+            right: 38%;
+            width: 20%;
+            height: 22%;
+            background: repeating-linear-gradient(90deg, #888, #888 2px, #ddd 2px, #ddd 10px);
+            border: 2px solid #555;
+            border-radius: 50% 50% 40% 40% / 10% 10% 10% 10%;
+            transform: rotate(-15deg);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .card-container {
+                aspect-ratio: auto;
+                height: auto;
+                flex-direction: column-reverse;
             }
-            .visual-machinery-panel {
-                height: 220px;
-                order: -1; /* Flips close-up tooling graphics to the top on mobile views */
-            }
-            .blue-swoop-divider {
+            .left-panel {
                 width: 100%;
-                height: 45px;
-                left: 0;
-                bottom: 0;
-                top: auto;
-                clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 75%);
+                padding: 30px 20px;
             }
-            .brand-details-panel {
-                padding: 3.5rem 2rem;
-                text-align: center;
-                align-items: center;
+            .right-panel {
+                position: relative;
+                width: 100%;
+                height: 220px;
             }
-            .main-title {
-                font-size: 2rem;
+            .curve-accent-dark, .curve-accent-light {
+                clip-path: ellipse(100% 85% at 50% 100%);
             }
-            .header-strip-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            .header-links {
-                flex-direction: column;
-                gap: 0.4rem;
-            }
-            .page-wrapper {
-                padding: 1rem;
+            .machining-graphic-bg {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Separate Header & Link System -->
-    <div class="contact-header-strip">
-        <div class="header-strip-container">
-            <div class="header-location">📍 North Palm Beach, FL 33408</div>
-            <div class="header-links">
-                <a href="tel:561-510-3691">📞 Call Production: 561-510-3691</a>
-                <a href="mailto:Marlowmodernplastics@gmail.com">✉️ Email Us: Marlowmodernplastics@gmail.com</a>
+    <div class="card-container">
+        
+        
+        <div class="left-panel">
+            <div class="logo-wrapper">
+                <!-- SVG built to replicate the precise "MP" intersecting circular logo from your card profile -->
+                <svg class="mp-logo-svg" viewBox="0 0 500 500" xmlns="http://w3.org">
+                    <!-- Outer circular crest line -->
+                    <path d="M 250,30 A 220,220 0 1,1 110,75" stroke="#0a2540" stroke-width="26" fill="none" stroke-linecap="round"/>
+                    <!-- The structural M and P glyph shapes -->
+                    <path d="M 80,400 L 80,180 L 190,320 L 300,180 L 300,400" stroke="#0a2540" stroke-width="44" fill="none" stroke-linejoin="miter" stroke-linecap="square"/>
+                    <path d="M 300,180 L 400,180 C 460,180 460,290 400,290 L 300,290" stroke="#0a2540" stroke-width="44" fill="none" stroke-linejoin="miter" stroke-linecap="square"/>
+                </svg>
             </div>
-        </div>
-    </div>
-
-    <!-- Main Website Presentation Container -->
-    <main class="page-wrapper">
-        <div class="card-style-banner">
             
-            <!-- Left Side Panel Layout -->
-            <div class="brand-details-panel">
-                <div class="logo-container">
-                    <div class="outer-ring">
-                        <div class="inner-arc"></div>
-                        <span class="logo-initials">MP</span>
-                    </div>
-                </div>
-
-                <h1 class="main-title">MARLOW MODERN PLASTICS</h1>
-            </div>
-
-            <!-- Right Side Panel Layout -->
-            <div class="visual-machinery-panel">
-                <div class="blue-swoop-divider"></div>
-                
-                <!-- Geometric shapes representing close-up precision tool machinery -->
-                <div class="tooling-matrix">
-                    <div style="position: absolute; transform: rotate(-45deg); font-family: monospace; font-size: 0.75rem; color: var(--bright-blue); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">
-                        Precision Tooling
-                    </div>
-                </div>
-            </div>
-
+            <h1 class="company-name">Marlow Modern Plastics</h1>
         </div>
-    </main>
 
-    <footer style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem; margin-top: auto; background-color: #ffffff; border-top: 1px solid var(--border-light);">
-        &copy; 2026 Marlow Modern Plastics &bull; High-Performance Engineering.
-    </footer>
+        <!-- Right Side: Graphic Accents & Machinery Imagery -->
+        <div class="right-panel">
+            <div class="machining-graphic-bg">
+                <div class="spindle-shaft"></div>
+                <div class="spindle-ridge"></div>
+                <div class="chuckle-block"></div>
+                <div class="dial-gauge"></div>
+            </div>
+            <div class="curve-accent-dark"></div>
+            <div class="curve-accent-light"></div>
+        </div>
+
+    </div>
 
 </body>
 </html>

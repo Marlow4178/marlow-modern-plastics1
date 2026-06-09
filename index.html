@@ -1,338 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marlow Modern Plastics</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+<header class="hero">
 
-body{
-    background:#ffffff;
-    color:#222;
-    line-height:1.6;
-}
+    <!-- Subtle Industrial Background Overlay -->
+    <div class="hero-overlay"></div>
 
-header{
-    background:linear-gradient(135deg,#0f172a,#1e40af);
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
+    <div class="hero-content">
 
-.logo{
-    font-size:3rem;
-    font-weight:800;
-    color:#60a5fa;
-    text-shadow:0 0 15px rgba(96,165,250,.8);
-    margin-bottom:15px;
-}
+        <!-- Company Logo -->
+        <div class="logo-container">
 
-.tagline{
-    font-size:1.2rem;
-    max-width:700px;
-    margin:auto;
-}
+            <svg xmlns="http://w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+                <rect width="800" height="450" fill="#0B1D33"/>
 
-.hero-buttons{
-    margin-top:35px;
-}
+                <path d="M 600 0 Q 650 150 620 300 T 670 450 L 800 450 L 800 0 Z" fill="#005BFF"/>
+                <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#FFFFFF"/>
 
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    margin:8px;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:.3s;
-}
+                <g transform="translate(300, 225)">
+                    <circle cx="0" cy="0" r="140"
+                        fill="none"
+                        stroke="#3B82F6"
+                        stroke-width="8"/>
 
-.btn-primary{
-    background:#2563eb;
-    color:white;
-}
+                    <path d="
+                      M -90,70 L -90,-70
+                      L -40,10
+                      L 10,-70
+                      L 10,70
+                      M 10,-70
+                      L 50,-70
+                      A 45,45 0 0,1 50,20
+                      L 10,20
+                    "
+                    fill="none"
+                    stroke="#60A5FA"
+                    stroke-width="24"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"/>
+                </g>
+            </svg>
 
-.btn-primary:hover{
-    background:#1d4ed8;
-}
+        </div>
 
-.btn-secondary{
-    background:white;
-    color:#1e40af;
-}
+        <div class="hero-text">
 
-.btn-secondary:hover{
-    background:#e5e7eb;
-}
+            <h1>
+                Precision Plastic Fabrication
+                for Commercial & Industrial Applications
+            </h1>
 
-section{
-    padding:70px 20px;
-    max-width:1200px;
-    margin:auto;
-}
+            <p>
+                Custom fabrication, CNC routing, acrylic solutions,
+                machine guards, displays, prototypes, and specialty
+                plastic components built with precision.
+            </p>
 
-.section-title{
-    text-align:center;
-    font-size:2rem;
-    margin-bottom:40px;
-    color:#1e40af;
-}
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Request a Quote
+                </a>
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+                <a href="tel:5615103691" class="btn btn-secondary">
+                    Call 561-510-3691
+                </a>
+            </div>
 
-.card{
-    background:#f8fafc;
-    border-radius:12px;
-    padding:25px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
+        </div>
 
-.card h3{
-    color:#1e40af;
-    margin-bottom:10px;
-}
-
-.why{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.gallery div{
-    height:220px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#dbeafe,#93c5fd);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    color:#1e3a8a;
-}
-
-.contact{
-    background:#f8fafc;
-    border-radius:15px;
-    padding:40px;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-}
-
-textarea{
-    min-height:120px;
-}
-
-.submit-btn{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:14px 25px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
-
-@media(max-width:768px){
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .logo{
-        font-size:2.2rem;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">MARLOW MODERN PLASTICS</div>
-
-    <p class="tagline">
-        Custom Plastic Fabrication, Acrylic Solutions,
-        CNC Routing, Marine Applications, and Industrial Projects.
-    </p>
-
-    <div class="hero-buttons">
-        <a href="tel:5615103691" class="btn btn-primary">Call Now</a>
-        <a href="#contact" class="btn btn-secondary">Request Quote</a>
     </div>
+
 </header>
-
-<section>
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>Custom Fabrication</h3>
-            <p>Precision-built plastic components and assemblies.</p>
-        </div>
-
-        <div class="card">
-            <h3>Acrylic Fabrication</h3>
-            <p>Displays, covers, guards, and custom acrylic solutions.</p>
-        </div>
-
-        <div class="card">
-            <h3>CNC Routing</h3>
-            <p>Accurate cutting and machining for custom projects.</p>
-        </div>
-
-        <div class="card">
-            <h3>Marine Plastics</h3>
-            <p>Durable solutions for marine and waterfront environments.</p>
-        </div>
-
-        <div class="card">
-            <h3>Industrial Components</h3>
-            <p>Production and specialty fabrication for businesses.</p>
-        </div>
-
-        <div class="card">
-            <h3>Prototype Development</h3>
-            <p>Bring your ideas from concept to reality.</p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Why Choose Us</h2>
-
-    <div class="why">
-
-        <div class="card">
-            <h3>Quality</h3>
-            <p>Attention to detail and professional craftsmanship.</p>
-        </div>
-
-        <div class="card">
-            <h3>Experience</h3>
-            <p>Custom solutions for commercial and industrial clients.</p>
-        </div>
-
-        <div class="card">
-            <h3>Service</h3>
-            <p>Responsive communication and dependable turnaround.</p>
-        </div>
-
-        <div class="card">
-            <h3>Innovation</h3>
-            <p>Creative fabrication approaches for unique projects.</p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Project Gallery</h2>
-
-    <div class="gallery">
-        <div>Custom Acrylic Work</div>
-        <div>Marine Fabrication</div>
-        <div>Industrial Components</div>
-        <div>CNC Routing</div>
-        <div>Custom Displays</div>
-        <div>Prototype Projects</div>
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">About Marlow Modern Plastics</h2>
-
-    <p style="text-align:center;max-width:900px;margin:auto;">
-        Marlow Modern Plastics provides professional custom plastic
-        fabrication services for residential, commercial, industrial,
-        and marine applications. We focus on quality workmanship,
-        dependable service, and solutions tailored to each project.
-    </p>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-
-    <div class="contact">
-
-        <div class="contact-grid">
-
-            <div>
-                <h3>Contact Information</h3>
-
-                <p><strong>Phone:</strong> 561-510-3691</p>
-                <br>
-
-                <p><strong>Email:</strong><br>
-                MarlowModernPlastics@gmail.com</p>
-                <br>
-
-                <p><strong>Location:</strong><br>
-                North Palm Beach, FL 33408</p>
-            </div>
-
-            <div>
-
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="tel" placeholder="Phone">
-                    <textarea placeholder="Tell us about your project"></textarea>
-
-                    <button class="submit-btn" type="submit">
-                        Request Quote
-                    </button>
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <h3>Marlow Modern Plastics</h3>
-    <p>North Palm Beach, FL 33408</p>
-    <p>561-510-3691</p>
-    <p>MarlowModernPlastics@gmail.com</p>
-    <br>
-    <p>© 2026 Marlow Modern Plastics. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>

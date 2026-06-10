@@ -3,342 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics LLC - Recreated Logo</title>
+    <title>Marlow Modern Plastics LLC | Innovate. Prototype. Produce.</title>
     <style>
-        /* --- General Page Setup --- */
-        body {
-            font-family: Arial, sans-serif;
-            color: #333333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
+        /* --- Core Document & Token Rules --- */
+        :root {
+            --primary-navy: #002244;
+            --accent-blue: #0066cc;
+            --text-dark: #223344;
+            --text-muted: #667788;
+            --bg-light: #f4f8fc;
+            --white: #ffffff;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* --- Recreated Logo Styling (Exact Image Match) --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Reusable SVG Logo Module --- */
         .logo-group {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
+            text-decoration: none;
         }
-        
-        .logo-container {
-            width: 50px;
-            height: 50px;
-            background-color: #031424; /* Deep navy background from image */
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
         }
 
         .logo-text h1 {
-            margin: 0;
-            font-size: 20px;
-            color: #051923;
-            letter-spacing: 1px;
-            line-height: 1.1;
-            font-weight: bold;
-        }
-        .logo-text span {
-            margin: 0;
-            font-size: 10px;
-            color: #0077b6;
-            font-weight: bold;
-            display: block;
-            letter-spacing: 0.5px;
+            font-size: 22px;
+            color: var(--primary-navy);
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            line-height: 0.95;
+            text-transform: uppercase;
         }
 
-        /* --- Header Navigation --- */
+        .logo-text span {
+            font-size: 10px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            display: block;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* --- Header & Fixed Navigation Engine --- */
         header {
-            background-color: #ffffff;
-            border-bottom: 2px solid #e0e0e0;
-            padding: 15px 0;
+            background-color: var(--white);
+            border-bottom: 1px solid #e2e8f0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
+
         .nav-box {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333333;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        nav a.quote-btn {
-            background-color: #0056b3;
-            color: #ffffff;
-            padding: 8px 15px;
-            border-radius: 4px;
+            height: 80px;
         }
 
-        /* --- Hero Layout Split --- */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a.quote-btn, .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        nav a.quote-btn:hover, .btn-primary:hover {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+
+        /* --- Premium Split Hero Section --- */
         .hero {
             margin-top: 80px;
             padding: 80px 0;
-            background: linear-gradient(135deg, #ffffff 0%, #f4f9ff 100%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.92) 40%, rgba(244,248,252,0.85) 100%);
+            position: relative;
+            overflow: hidden;
         }
+
         .hero .container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
             align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
+            gap: 48px;
         }
+
         .hero-left {
-            flex: 1;
-            min-width: 300px;
-            max-width: 650px;
+            max-width: 580px;
         }
+
         .hero .big-logo {
-            margin-bottom: 25px;
+            margin-bottom: 32px;
         }
-        .hero .big-logo .logo-container {
-            width: 120px;
-            height: 120px;
-            border-radius: 16px;
-            padding: 10px;
+
+        .hero .big-logo .logo-svg {
+            width: 84px;
+            height: 84px;
         }
+
         .hero .big-logo .logo-text h1 {
-            font-size: 32px;
+            font-size: 38px;
         }
+
         .hero .big-logo .logo-text span {
-            font-size: 14px;
-        }
-        .hero-subtitle {
-            font-size: 24px;
-            color: #051923;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border-left: 4px solid #0077b6;
-            padding-left: 15px;
-        }
-        .hero p {
             font-size: 16px;
-            margin-bottom: 35px;
-            color: #444444;
+            letter-spacing: 1px;
         }
-        .btn {
-            display: inline-block;
-            background-color: #0056b3;
-            color: #ffffff;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-right: 15px;
-            margin-bottom: 10px;
+
+        .hero-title-bar {
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin-bottom: 24px;
         }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+        }
+
         .btn-outline {
             background-color: transparent;
-            color: #0056b3;
-            border: 2px solid #0056b3;
-            padding: 10px 23px;
-        }
-
-        /* --- CNC Machine Vector Frame --- */
-        .hero-right {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-        .cnc-container {
-            width: 100%;
-            max-width: 400px;
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        /* --- Core Services Grid --- */
-        .services {
-            padding: 60px 0;
-            background-color: #fcfcfc;
-        }
-        .services h2 {
-            text-align: center;
-            color: #051923;
-            font-size: 28px;
-            margin-bottom: 40px;
-        }
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-        .service-box {
-            flex: 1;
-            min-width: 230px;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            padding: 25px;
-            border-radius: 6px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .service-box h3 {
-            color: #051923;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        /* --- Business Description --- */
-        .about {
-            background-color: #ffffff;
-            padding: 60px 0;
-            border-top: 1px solid #e0e0e0;
-        }
-        .about h2 {
-            color: #051923;
-            font-size: 28px;
-        }
-        .bullets {
-            margin-top: 20px;
-            padding-left: 20px;
-        }
-        .bullets li {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* --- Direct Office Contact --- */
-        .contact {
-            background-color: #f4f9ff;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .contact h2 {
-            margin-bottom: 40px;
-            color: #051923;
-        }
-        .contact-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-        .contact-item h4 {
-            margin: 0 0 5px 0;
-            color: #777777;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
             text-transform: uppercase;
-        }
-        .contact-item p {
-            margin: 0;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #051923;
-            color: #ffffff;
-            padding: 40px 0;
-            font-size: 14px;
-        }
-        .footer-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-        }
-        .footer-left .logo-text h1 {
-            color: #ffffff;
-        }
-        .footer-right {
-            max-width: 500px;
-            text-align: right;
-            color: #cccccc;
-        }
-        .copyright {
+            transition: all 0.2s ease;
+            display: inline-block;
             text-align: center;
-            margin-top: 30px;
-            color: #777777;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        /* --- Recreated Industrial CNC Image Vector Node --- */
+        .hero-right-graphic {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 15px 40px rgba(0,34,68,0.06);
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        /* --- Operational Pillars Grid --- */
+        .pillars {
+            padding: 80px 0;
+            background-color: var(--white);
+            border-top: 1px solid #edf2f7;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .pillar-card {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .pillar-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 20px auto;
+            color: var(--accent-blue);
+        }
+
+        .pillar-card h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .pillar-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- Who We Are Summary Module --- */
+        .who-we-are {
+            padding: 90px 0;
+            background-color: var(--bg-light);
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 64px;
+        }
+
+        .who-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .who-left h2 {
+            font-size: 32px;
+            color: var(--primary-navy);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .who-left p {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        /* --- Component Showcase Block Graphics --- */
+        .who-right-graphic {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* --- Contact Directory Strip --- */
+        .contact-strip {
+            padding: 90px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .contact-strip h4 {
             font-size: 12px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-navy);
+            font-weight: 800;
+            margin-bottom: 8px;
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .nav-box {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav a {
-                margin: 0 10px;
-                font-size: 13px;
-            }
-            .hero {
-                margin-top: 120px;
-            }
-            .contact-row {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .footer-row {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-right {
-                text-align: center;
-            }
+        .contact-strip h2 {
+            font-size: 36px;
+            color: var(--primary-navy);
+            font-weight: 800;
+            margin-bottom: 56px;
         }
-    </style>
-</head>
-<body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="container nav-box">
-            <div class="logo-group">
-                <!-- Recreated SVG Icon Element inside Header -->
-                <div class="logo-container">
-                    <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://w3.org">
-                        <!-- Outer Crest Ring Line -->
-                        <path d="M 12,50 A 38,38 0 1,1 88,50 A 38,38 0 1,1 12,50" fill="none" stroke="#103154" stroke-width="2.5" stroke-linecap="round"/>
-                        <!-- Intertwined Geometric M & P Structures -->
-                        <path d="M 22,70 L 22,32 L 44,56 L 66,32 L 66,70 M 66,32 L 76,32 C 84,32 84,48 76,48 L 66,48" fill="none" stroke="#1a4473" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <h1>MARLOW</h1>
-                    <span>MODERN PLASTICS LLC</span>
-                </div>
-            </div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-                <a href="#" class="quote-btn">Request a Quote</a>
-            </nav>
-        </div>
-    </header>
+        .contact-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
 
-    <!-- Welcome Hero Banner -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-left">
-                <div class="logo-group big-logo">
-                    <!-- Expanded SVG Replay Element inside Main Display Hero -->
-                    <div class="logo-container">
-                        <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://w3.org">
-                            <path d="M 12,50 A 38,38 0 1,1 88,50 A 38,38 0 1,1 12,50" fill="none" stroke="#103154" stroke-width="2.5" stroke-linecap="round"/>
+        .contact-card {
+            padding: 16px;
+        }
+
+        .contact-icon-box {
+            width: 54px;
+            height: 54px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px auto;
+            color: var(--accent-blue);
+        }
+
+        .contact-icon-box svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .contact-card h5 {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;

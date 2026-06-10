@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,6 @@
     <title>Marlow Modern Plastics LLC</title>
     <style>
         /* --- General Page Setup --- */
-        html {
-            scroll-behavior: smooth;
-        }
         body {
             font-family: Arial, sans-serif;
             color: #333333;
@@ -26,51 +24,24 @@
         header {
             background-color: #ffffff;
             border-bottom: 2px solid #e0e0e0;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+            padding: 20px 0;
         }
         .nav-box {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        /* Inline Vector Monogram Logo Branding */
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-box {
-            width: 45px;
-            height: 45px;
-            background-color: #031424;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
-        }
         .brand h1 {
             margin: 0;
-            font-size: 22px;
+            font-size: 24px;
             color: #0d3b66;
-            line-height: 1.1;
-            font-weight: bold;
-            letter-spacing: 0.5px;
         }
         .brand p {
             margin: 0;
-            font-size: 11px;
+            font-size: 12px;
             color: #0077b6;
             font-weight: bold;
-            letter-spacing: 0.5px;
         }
-        
         nav a {
             margin-left: 20px;
             text-decoration: none;
@@ -78,62 +49,34 @@
             font-weight: bold;
             font-size: 14px;
         }
-        nav a:hover {
-            color: #0077b6;
-        }
-        
-        /* Interactive Modal Launcher Triggers */
-        .quote-btn, .btn-modal-trigger {
+        nav a.quote-btn {
             background-color: #0056b3;
             color: #ffffff;
             padding: 8px 15px;
             border-radius: 4px;
-            border: none;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            font-family: Arial, sans-serif;
-        }
-        .quote-btn:hover, .btn-modal-trigger:hover {
-            background-color: #0d3b66;
         }
 
-        /* --- Split Showcase Hero Layout --- */
+        /* --- Welcome Hero Banner --- */
         .hero {
-            margin-top: 75px;
-            padding: 100px 0;
-            background: linear-gradient(135deg, #ffffff 40%, #f4f9ff 100%);
-        }
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .hero-left {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
+            background-color: #f4f9ff;
+            padding: 60px 0;
         }
         .hero-title {
             font-size: 36px;
             color: #051923;
             margin-bottom: 10px;
-            font-weight: bold;
         }
         .hero-subtitle {
             font-size: 22px;
             color: #0077b6;
             margin-bottom: 20px;
-            font-weight: bold;
         }
         .hero p {
             font-size: 16px;
+            max-width: 700px;
             margin-bottom: 30px;
-            color: #444444;
         }
-        .btn-modal-trigger-large {
+        .btn {
             display: inline-block;
             background-color: #0056b3;
             color: #ffffff;
@@ -142,44 +85,17 @@
             font-weight: bold;
             border-radius: 4px;
             margin-right: 15px;
-            margin-bottom: 10px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .btn-modal-trigger-large:hover {
-            background-color: #0d3b66;
         }
         .btn-outline {
-            display: inline-block;
             background-color: transparent;
             color: #0056b3;
             border: 2px solid #0056b3;
             padding: 10px 23px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-        .btn-outline:hover {
-            background-color: #0056b3;
-            color: #ffffff;
-        }
-
-        /* --- Integrated Vector CNC Graphic Deck --- */
-        .hero-right {
-            flex: 1;
-            min-width: 300px;
-            max-width: 440px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 15px 40px rgba(0,34,68,0.06);
         }
 
         /* --- Core Services Grid --- */
         .services {
-            padding: 80px 0 40px 0;
+            padding: 60px 0;
         }
         .services-grid {
             display: flex;
@@ -195,7 +111,6 @@
             padding: 25px;
             border-radius: 6px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
         }
         .service-box h3 {
             color: #051923;
@@ -206,7 +121,7 @@
         /* --- Business Description --- */
         .about {
             background-color: #ffffff;
-            padding: 80px 0 40px 0;
+            padding: 60px 0;
             border-top: 1px solid #e0e0e0;
         }
         .about h2 {
@@ -225,7 +140,7 @@
         /* --- Direct Office Contact --- */
         .contact {
             background-color: #f4f9ff;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         .contact h2 {
@@ -260,17 +175,12 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
-            align-items: center;
         }
         .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .footer-left .logo-box {
-            border: 1px solid #ffffff;
+            flex: 1;
         }
         .footer-right {
+            flex: 1;
             text-align: right;
             color: #cccccc;
         }
@@ -280,89 +190,118 @@
             color: #777777;
             font-size: 12px;
         }
+    </style>
+</head>
+<body>
 
-        /* --- Lightbox Modal Popup Form Window --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(3, 20, 36, 0.7);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-window {
-            background-color: #ffffff;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 480px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-        }
-        .modal-window h3 {
-            color: #051923;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: bold;
-        }
-        .form-group {
-            margin-bottom: 16px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: bold;
-            color: #0d3b66;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e0;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #0066cc;
-        }
-        .form-btn-submit {
-            width: 100%;
-            background-color: #0056b3;
-            color: #ffffff;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        .form-btn-submit:hover {
-            background-color: #0d3b66;
-        }
-        .form-btn-close {
-            width: 100%;
-            background-color: #e2e8f0;
-            color: #333333;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .form-btn-close:hover {
-            background-color: #cbd5e0;
-        }
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-box">
+            <div class="brand">
+                <h1>MARLOW</h1>
+                <p>MODERN PLASTICS LLC</p>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="#" class="quote-btn">Request a Quote</a>
+            </nav>
+        </div>
+    </header>
 
-        /* --- Responsive Viewports --- */
-        @media (max-width: 768px) {
+    <!-- Welcome Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-title">MARLOW MODERN PLASTICS LLC</div>
+            <div class="hero-subtitle">Innovate. Prototype. Produce.</div>
+            <p>We deliver end-to-end development and manufacturing support for plastic products and components. From initial concept to prototype and beyond, we help bring ideas to life with precision, quality, and speed.</p>
+            <a href="#" class="btn">Our Services</a>
+            <a href="#" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Idea to Reality</h3>
+                    <p>We help turn concepts into functional prototypes and manufacturable products.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Prototype Development</h3>
+                    <p>Rapid prototyping and design support to test, refine, and validate your structural ideas.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Plastics Expertise</h3>
+                    <p>Extensive foundational knowledge in a wide range of plastics and modern manufacturing methods.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Scalable Solutions</h3>
+                    <p>From single rapid prototypes to full production support, we scale exactly with your volume needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Description -->
+    <section class="about">
+        <div class="container">
+            <span>WHO WE ARE</span>
+            <h2>Your Partner in Plastic Product Development</h2>
+            <p>Marlow Modern Plastics LLC is a plastics development company focused on helping inventors, creators, and businesses successfully develop and manufacture plastic products.</p>
+            <p>We combine technical knowledge, hands-on experience, and a problem-solving approach to provide practical solutions that move your project forward.</p>
+            <ul class="bullets">
+                <li>Concept & Design Support</li>
+                <li>Prototype & Manufacturing Guidance</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Direct Office Contact -->
+    <section class="contact">
+        <div class="container">
+            <span>LET'S BUILD SOMETHING GREAT TOGETHER</span>
+            <h2>Contact Us</h2>
+            <div class="contact-row">
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>561-510-3691</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>MarlowModernPlastics@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>North Palm Beach, FL 33408</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-left">
+                    <h3>MARLOW</h3>
+                    <p style="font-size:11px; color:#0077b6;">MODERN PLASTICS LLC</p>
+                </div>
+                <div class="footer-right">
+                    <p>Provides development and manufacturing support for plastic products and components. We help ideas become reality through innovation, quality, and collaboration.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Marlow Modern Plastics LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+

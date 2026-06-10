@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics LLC</title>
+    <title>Marlow Modern Plastics LLC - Recreated Logo</title>
     <style>
         /* --- General Page Setup --- */
         body {
@@ -19,32 +19,32 @@
             padding: 20px;
         }
 
-        /* --- Logo Components --- */
+        /* --- Recreated Logo Styling (Exact Image Match) --- */
         .logo-group {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
-        .logo-circle {
-            background-color: #0d3b66;
-            color: #ffffff;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+        
+        .logo-container {
+            width: 50px;
+            height: 50px;
+            background-color: #031424; /* Deep navy background from image */
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            letter-spacing: 0.5px;
-            border: 2px solid #0d3b66;
+            padding: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         .logo-text h1 {
             margin: 0;
             font-size: 20px;
             color: #051923;
             letter-spacing: 1px;
             line-height: 1.1;
+            font-weight: bold;
         }
         .logo-text span {
             margin: 0;
@@ -106,10 +106,11 @@
         .hero .big-logo {
             margin-bottom: 25px;
         }
-        .hero .big-logo .logo-circle {
-            width: 75px;
-            height: 75px;
-            font-size: 28px;
+        .hero .big-logo .logo-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            padding: 10px;
         }
         .hero .big-logo .logo-text h1 {
             font-size: 32px;
@@ -261,9 +262,6 @@
         .footer-left .logo-text h1 {
             color: #ffffff;
         }
-        .footer-left .logo-circle {
-            border: 2px solid #ffffff;
-        }
         .footer-right {
             max-width: 500px;
             text-align: right;
@@ -311,7 +309,15 @@
     <header>
         <div class="container nav-box">
             <div class="logo-group">
-                <div class="logo-circle">MP</div>
+                <!-- Recreated SVG Icon Element inside Header -->
+                <div class="logo-container">
+                    <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://w3.org">
+                        <!-- Outer Crest Ring Line -->
+                        <path d="M 12,50 A 38,38 0 1,1 88,50 A 38,38 0 1,1 12,50" fill="none" stroke="#103154" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Intertwined Geometric M & P Structures -->
+                        <path d="M 22,70 L 22,32 L 44,56 L 66,32 L 66,70 M 66,32 L 76,32 C 84,32 84,48 76,48 L 66,48" fill="none" stroke="#1a4473" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+                    </svg>
+                </div>
                 <div class="logo-text">
                     <h1>MARLOW</h1>
                     <span>MODERN PLASTICS LLC</span>
@@ -332,21 +338,7 @@
         <div class="container">
             <div class="hero-left">
                 <div class="logo-group big-logo">
-                    <div class="logo-circle">MP</div>
-                    <div class="logo-text">
-                        <h1>MARLOW</h1>
-                        <span>MODERN PLASTICS LLC</span>
-                    </div>
-                </div>
-                <div class="hero-subtitle">Innovate. Prototype. Produce.</div>
-                <p>We deliver end-to-end development and manufacturing support for plastic products and components. From initial concept to prototype and beyond, we help bring ideas to life with precision, quality, and speed.</p>
-                <a href="#" class="btn">Our Services</a>
-                <a href="#" class="btn btn-outline">Contact Us</a>
-            </div>
-            
-            <!-- Safe, Static Vector Graphic Wrapper -->
-            <div class="hero-right">
-                <div class="cnc-container">
-                    <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://w3.org">
-                        <!-- Machine Base Deck -->
-                        <rect x="30" y="210" width="340" height="30" rx="4" fill="#051923" />
+                    <!-- Expanded SVG Replay Element inside Main Display Hero -->
+                    <div class="logo-container">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://w3.org">
+                            <path d="M 12,50 A 38,38 0 1,1 88,50 A 38,38 0 1,1 12,50" fill="none" stroke="#103154" stroke-width="2.5" stroke-linecap="round"/>

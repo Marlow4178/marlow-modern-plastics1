@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlow Modern Plastics LLC | Innovate. Prototype. Produce.</title>
+    <title>Marlow Modern Plastics LLC</title>
     <style>
-        /* --- Core Document & Token Rules --- */
         :root {
-            --primary-navy: #002244;
-            --accent-blue: #0066cc;
-            --text-dark: #223344;
-            --text-muted: #667788;
-            --bg-light: #f4f8fc;
+            --navy: #002244;
+            --blue: #0066cc;
+            --dark: #223344;
+            --muted: #667788;
+            --light: #f4f8fc;
             --white: #ffffff;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -23,11 +21,10 @@
         }
 
         body {
-            font-family: var(--font-stack);
-            color: var(--text-dark);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: var(--dark);
             line-height: 1.6;
             background-color: var(--white);
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -36,40 +33,7 @@
             padding: 0 24px;
         }
 
-        /* --- Reusable SVG Logo Module --- */
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-
-        .logo-svg {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-        }
-
-        .logo-text h1 {
-            font-size: 22px;
-            color: var(--primary-navy);
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            line-height: 0.95;
-            text-transform: uppercase;
-        }
-
-        .logo-text span {
-            font-size: 10px;
-            color: var(--accent-blue);
-            font-weight: 700;
-            display: block;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-
-        /* --- Header & Fixed Navigation Engine --- */
+        /* --- Header & Navigation Bar --- */
         header {
             background-color: var(--white);
             border-bottom: 1px solid #e2e8f0;
@@ -78,7 +42,6 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .nav-box {
@@ -86,6 +49,37 @@
             justify-content: space-between;
             align-items: center;
             height: 80px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 46px;
+            height: 46px;
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            color: var(--navy);
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            line-height: 0.95;
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            font-size: 10px;
+            color: var(--blue);
+            font-weight: 700;
+            display: block;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 2px;
         }
 
         nav {
@@ -96,91 +90,63 @@
 
         nav a {
             text-decoration: none;
-            color: var(--primary-navy);
+            color: var(--navy);
             font-weight: 600;
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-blue);
-        }
-
-        nav a.quote-btn, .btn-primary {
-            background-color: var(--accent-blue);
+        .quote-btn, .btn-primary {
+            background-color: var(--blue);
             color: var(--white);
             padding: 10px 20px;
             border-radius: 4px;
             font-weight: 700;
             border: none;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        nav a.quote-btn:hover, .btn-primary:hover {
-            background-color: var(--primary-navy);
-            color: var(--white);
-        }
-
-        /* --- Premium Split Hero Section --- */
+        /* --- Welcome Hero Section --- */
         .hero {
             margin-top: 80px;
             padding: 80px 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.92) 40%, rgba(244,248,252,0.85) 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 40%, #f4f8fc 100%);
         }
 
         .hero .container {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 48px;
+            flex-wrap: wrap;
         }
 
         .hero-left {
+            flex: 1;
+            min-width: 300px;
             max-width: 580px;
-        }
-
-        .hero .big-logo {
-            margin-bottom: 32px;
-        }
-
-        .hero .big-logo .logo-svg {
-            width: 84px;
-            height: 84px;
-        }
-
-        .hero .big-logo .logo-text h1 {
-            font-size: 38px;
-        }
-
-        .hero .big-logo .logo-text span {
-            font-size: 16px;
-            letter-spacing: 1px;
         }
 
         .hero-title-bar {
             width: 40px;
             height: 3px;
-            background-color: var(--accent-blue);
-            margin-bottom: 24px;
+            background-color: var(--blue);
+            margin: 24px 0;
         }
 
         .hero h2 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
-            color: var(--primary-navy);
+            color: var(--navy);
             margin-bottom: 16px;
         }
 
         .hero p {
             font-size: 15px;
-            color: var(--text-muted);
+            color: var(--muted);
             margin-bottom: 32px;
-            line-height: 1.7;
         }
 
         .hero-actions {
@@ -190,37 +156,26 @@
 
         .btn-outline {
             background-color: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
+            color: var(--blue);
+            border: 2px solid var(--blue);
             padding: 10px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            transition: all 0.2s ease;
-            display: inline-block;
-            text-align: center;
         }
 
-        .btn-outline:hover {
-            background-color: var(--accent-blue);
-            color: var(--white);
-        }
-
-        /* --- Recreated Industrial CNC Image Vector Node --- */
         .hero-right-graphic {
-            background-color: #ffffff;
+            flex: 1;
+            min-width: 300px;
+            max-width: 440px;
+            background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 24px;
             box-shadow: 0 15px 40px rgba(0,34,68,0.06);
-            width: 100%;
-            max-width: 440px;
-            margin: 0 auto;
         }
 
-        /* --- Operational Pillars Grid --- */
+        /* --- Service Columns --- */
         .pillars {
             padding: 80px 0;
             background-color: var(--white);
@@ -228,12 +183,14 @@
         }
 
         .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 32px;
         }
 
         .pillar-card {
+            flex: 1;
+            min-width: 220px;
             text-align: center;
             padding: 16px;
         }
@@ -242,60 +199,54 @@
             width: 44px;
             height: 44px;
             margin: 0 auto 20px auto;
-            color: var(--accent-blue);
+            color: var(--blue);
         }
 
         .pillar-card h3 {
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--primary-navy);
+            color: var(--navy);
             margin-bottom: 12px;
             font-weight: 800;
         }
 
         .pillar-card p {
             font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
+            color: var(--muted);
         }
 
-        /* --- Who We Are Summary Module --- */
+        /* --- Summary Section --- */
         .who-we-are {
-            padding: 90px 0;
-            background-color: var(--bg-light);
+            padding: 80px 0;
+            background-color: var(--light);
         }
 
         .who-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 64px;
+        }
+
+        .who-left {
+            flex: 1;
+            min-width: 300px;
         }
 
         .who-tag {
             font-size: 11px;
             text-transform: uppercase;
-            color: var(--accent-blue);
+            color: var(--blue);
             font-weight: 800;
-            letter-spacing: 1px;
             margin-bottom: 8px;
             display: block;
         }
 
         .who-left h2 {
             font-size: 32px;
-            color: var(--primary-navy);
+            color: var(--navy);
             font-weight: 800;
-            line-height: 1.2;
             margin-bottom: 24px;
-        }
-
-        .who-left p {
-            font-size: 15px;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            opacity: 0.9;
         }
 
         .bullet-list {
@@ -310,80 +261,150 @@
             margin-bottom: 14px;
             font-size: 14px;
             font-weight: 600;
-            color: var(--primary-navy);
         }
 
         .check-icon {
             width: 18px;
             height: 18px;
-            color: var(--accent-blue);
-            flex-shrink: 0;
+            color: var(--blue);
         }
 
-        /* --- Component Showcase Block Graphics --- */
         .who-right-graphic {
-            background-color: #ffffff;
+            flex: 1;
+            min-width: 300px;
+            max-width: 440px;
+            background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 32px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
         }
 
-        /* --- Contact Directory Strip --- */
+        /* --- Office Contact Blocks --- */
         .contact-strip {
-            padding: 90px 0;
-            background-color: var(--white);
+            padding: 80px 0;
             text-align: center;
-        }
-
-        .contact-strip h4 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary-navy);
-            font-weight: 800;
-            margin-bottom: 8px;
         }
 
         .contact-strip h2 {
             font-size: 36px;
-            color: var(--primary-navy);
-            font-weight: 800;
+            color: var(--navy);
             margin-bottom: 56px;
         }
 
         .contact-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 40px;
+            justify-content: center;
         }
 
         .contact-card {
-            padding: 16px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 320px;
         }
 
         .contact-icon-box {
             width: 54px;
             height: 54px;
-            background-color: var(--bg-light);
+            background-color: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 24px auto;
-            color: var(--accent-blue);
+            color: var(--blue);
         }
 
-        .contact-icon-box svg {
-            width: 22px;
-            height: 22px;
+        .contact-card p {
+            font-size: 15px;
+            color: var(--navy);
+            font-weight: 700;
         }
 
-        .contact-card h5 {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.8px;
+        /* --- Footer --- */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 64px 0 32px 0;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 32px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-left .logo-text h1 { color: var(--white); }
+
+        .footer-right p {
+            font-size: 14px;
+            color: #a0aec0;
+            max-width: 540px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 32px;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        /* --- Quote Window Pop Up --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 34, 68, 0.6);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-window {
+            background-color: var(--white);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            padding: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-box { flex-direction: column; height: auto; padding: 16px 0; gap: 16px; }
+            .hero { margin-top: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-box">
+            <a href="#" class="logo-group">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <circle cx="50" cy="50" r="44" fill="none" stroke="#002244" stroke-width="3"/>

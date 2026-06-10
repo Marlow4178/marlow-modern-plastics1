@@ -7,7 +7,7 @@
     <style>
         /* --- General Page Setup --- */
         html {
-            scroll-behavior: smooth; /* Crucial: This makes the scrolling look clean and professional */
+            scroll-behavior: smooth;
         }
         body {
             font-family: Arial, sans-serif;
@@ -26,8 +26,8 @@
         header {
             background-color: #ffffff;
             border-bottom: 2px solid #e0e0e0;
-            padding: 20px 0;
-            position: fixed; /* Holds header at the top of the viewport */
+            padding: 15px 0;
+            position: fixed;
             width: 100%;
             top: 0;
             left: 0;
@@ -38,17 +38,39 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        /* Inline Vector Brand Logo styling */
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-box {
+            width: 45px;
+            height: 45px;
+            background-color: #031424;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
         .brand h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 22px;
             color: #0d3b66;
+            line-height: 1.1;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
         .brand p {
             margin: 0;
-            font-size: 12px;
+            font-size: 11px;
             color: #0077b6;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
+        
         nav a {
             margin-left: 20px;
             text-decoration: none;
@@ -65,29 +87,41 @@
             padding: 8px 15px;
             border-radius: 4px;
         }
-        nav a.quote-btn:hover {
-            background-color: #0d3b66;
-        }
 
-        /* --- Welcome Hero Banner --- */
+        /* --- Welcome Split Hero Section --- */
         .hero {
-            background-color: #f4f9ff;
-            padding: 120px 0 60px 0; /* Extra top padding so fixed header doesn't cover text */
+            margin-top: 75px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ffffff 40%, #f4f9ff 100%);
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-left {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
         }
         .hero-title {
             font-size: 36px;
             color: #051923;
             margin-bottom: 10px;
+            font-weight: bold;
         }
         .hero-subtitle {
             font-size: 22px;
             color: #0077b6;
             margin-bottom: 20px;
+            font-weight: bold;
         }
         .hero p {
             font-size: 16px;
-            max-width: 700px;
             margin-bottom: 30px;
+            color: #444444;
         }
         .btn {
             display: inline-block;
@@ -98,24 +132,31 @@
             font-weight: bold;
             border-radius: 4px;
             margin-right: 15px;
-        }
-        .btn:hover {
-            background-color: #0d3b66;
+            margin-bottom: 10px;
         }
         .btn-outline {
+            display: inline-block;
             background-color: transparent;
             color: #0056b3;
             border: 2px solid #0056b3;
             padding: 10px 23px;
         }
-        .btn-outline:hover {
-            background-color: #0056b3;
-            color: #ffffff;
+
+        /* --- Recreated Vector CNC Background Graphic Frame --- */
+        .hero-right {
+            flex: 1;
+            min-width: 300px;
+            max-width: 440px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 15px 40px rgba(0,34,68,0.06);
         }
 
         /* --- Core Services Grid --- */
         .services {
-            padding: 80px 0 40px 0; /* Add top padding to account for fixed header scroll offset */
+            padding: 80px 0 40px 0;
         }
         .services-grid {
             display: flex;
@@ -131,6 +172,7 @@
             padding: 25px;
             border-radius: 6px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
         }
         .service-box h3 {
             color: #051923;
@@ -141,7 +183,7 @@
         /* --- Business Description --- */
         .about {
             background-color: #ffffff;
-            padding: 80px 0 40px 0; /* Add top padding to account for fixed header scroll offset */
+            padding: 80px 0 40px 0;
             border-top: 1px solid #e0e0e0;
         }
         .about h2 {
@@ -160,7 +202,8 @@
         /* --- Direct Office Contact --- */
         .contact {
             background-color: #f4f9ff;
-            padding: 80px 0; /* Add top padding to account for fixed header scroll offset */
+            padding: 80px 0;
+            text-align: center;
         }
         .contact h2 {
             margin-bottom: 40px;
@@ -194,12 +237,17 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
+            align-items: center;
         }
         .footer-left {
-            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-left .logo-box {
+            border: 1px solid #ffffff;
         }
         .footer-right {
-            flex: 1;
             text-align: right;
             color: #cccccc;
         }
@@ -209,6 +257,15 @@
             color: #777777;
             font-size: 12px;
         }
+
+        /* --- Responsive Viewports --- */
+        @media (max-width: 768px) {
+            .nav-box { flex-direction: column; height: auto; gap: 15px; }
+            .hero { margin-top: 130px; }
+            .hero-left { text-align: center; }
+            .footer-row { flex-direction: column; text-align: center; gap: 15px; }
+            .footer-right { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -216,9 +273,18 @@
     <!-- Header Navigation -->
     <header>
         <div class="container nav-box">
-            <div class="brand">
-                <h1>MARLOW</h1>
-                <p>MODERN PLASTICS LLC</p>
+            <div class="logo-group">
+                <!-- Inline Functional Vector Logo Element -->
+                <div class="logo-box">
+                    <svg viewBox="0 0 100 100" width="36" height="36" xmlns="http://w3.org">
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="#ffffff" stroke-width="3"/>
+                        <path d="M 26,68 L 26,34 L 46,56 L 66,34 L 66,68 M 66,34 L 75,34 C 82,34 82,49 75,49 L 66,49" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="square"/>
+                    </svg>
+                </div>
+                <div class="brand">
+                    <h1>MARLOW</h1>
+                    <p>MODERN PLASTICS LLC</p>
+                </div>
             </div>
             <nav>
                 <a href="#home">Home</a>
@@ -230,85 +296,27 @@
         </div>
     </header>
 
-    <!-- Welcome Hero Banner -->
+    <!-- Welcome Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-title">MARLOW MODERN PLASTICS LLC</div>
-            <div class="hero-subtitle">Innovate. Prototype. Produce.</div>
-            <p>We deliver end-to-end development and manufacturing support for plastic products and components. From initial concept to prototype and beyond, we help bring ideas to life with precision, quality, and speed.</p>
-            <a href="#services" class="btn">Our Services</a>
-            <a href="#contact" class="btn btn-outline">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Core Services Grid -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-box">
-                    <h3>Idea to Reality</h3>
-                    <p>We help turn concepts into functional prototypes and manufacturable products.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Prototype Development</h3>
-                    <p>Rapid prototyping and design support to test, refine, and validate your structural ideas.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Plastics Expertise</h3>
-                    <p>Extensive foundational knowledge in a wide range of plastics and modern manufacturing methods.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Scalable Solutions</h3>
-                    <p>From single rapid prototypes to full production support, we scale exactly with your volume needs.</p>
-                </div>
+            <div class="hero-left">
+                <div class="hero-title">MARLOW MODERN PLASTICS LLC</div>
+                <div class="hero-subtitle">Innovate. Prototype. Produce.</div>
+                <p>We deliver end-to-end development and manufacturing support for plastic products and components. From initial concept to prototype and beyond, we help bring ideas to life with precision, quality, and speed.</p>
+                <a href="#services" class="btn">Our Services</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
-        </div>
-    </section>
 
-    <!-- Business Description -->
-    <section class="about" id="about">
-        <div class="container">
-            <span>WHO WE ARE</span>
-            <h2>Your Partner in Plastic Product Development</h2>
-            <p>Marlow Modern Plastics LLC is a plastics development company focused on helping inventors, creators, and businesses successfully develop and manufacture plastic products.</p>
-            <p>We combine technical knowledge, hands-on experience, and a problem-solving approach to provide practical solutions that move your project forward.</p>
-            <ul class="bullets">
-                <li>Concept & Design Support</li>
-                <li>Prototype & Manufacturing Guidance</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Direct Office Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <span>LET'S BUILD SOMETHING GREAT TOGETHER</span>
-            <h2>Contact Us</h2>
-            <div class="contact-row">
-                <div class="contact-item">
-                    <h4>Phone</h4>
-                    <p>561-510-3691</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Email</h4>
-                    <p>MarlowModernPlastics@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Location</h4>
-                    <p>North Palm Beach, FL 33408</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-row">
-            <div class="footer-left">
-                <h3>MARLOW MODERN PLASTICS LLC</h3>
-                <p>Precision development and manufacturing support solutions.</p>
-            </div>
-            <div class="footer-right">
-                <p>Bringing plastic design configurations to life from concept to production stage.</p>
-            </div>
-        </div>
+            <!-- Crisp Static Vector Graphic Blueprint of a CNC Machine -->
+            <div class="hero-right">
+                <svg viewBox="0 0 400 320" width="100%" height="100%" xmlns="http://w3.org">
+                    <!-- Base Deck -->
+                    <rect x="15" y="250" width="370" height="35" rx="5" fill="#002244" />
+                    <line x1="60" y1="250" x2="60" y2="285" stroke="#001122" stroke-width="2" />
+                    <line x1="140" y1="250" x2="140" y2="285" stroke="#001122" stroke-width="2" />
+                    <line x1="220" y1="250" x2="220" y2="285" stroke="#001122" stroke-width="2" />
+                    <line x1="300" y1="250" x2="300" y2="285" stroke="#001122" stroke-width="2" />
+                    
+                    <!-- Structural Gantry Posts -->
+                    <rect x="45" y="40" width="22" height="210" fill="#cbd5e0" />
+                    <rect x="333" y="40" width="22" height="210" fill="#cbd5e0" />

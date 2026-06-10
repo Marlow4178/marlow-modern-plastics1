@@ -1,349 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Marlow Modern Plastics</title>
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white text-slate-800">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+      {/* HERO */}
+      <section className="relative overflow-hidden">
 
-html{ scroll-behavior:smooth; }
+        {/* CNC Background */}
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1565431184475-1f7d62f4b8b8?q=80&w=2000')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "grayscale(100%)",
+          }}
+        />
 
-body{
-    background:#111c2e; /* BRIGHTER BASE */
-    color:#e5e7eb;
-}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-blue-50" />
 
-/* NAV */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(17,28,46,0.65);
-    backdrop-filter:blur(14px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 28px;
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
+        <div className="relative max-w-7xl mx-auto px-6 py-24">
 
-nav .links a{
-    color:#e5e7eb;
-    margin:0 12px;
-    text-decoration:none;
-    font-size:14px;
-}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-nav .links a:hover{ color:#60a5fa; }
+            <div>
+              <img
+                src="/logo.jpg"
+                alt="Marlow Modern Plastics"
+                className="w-64 mb-8 drop-shadow-xl"
+              />
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:120px 20px;
-    overflow:hidden;
-}
+              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 leading-tight">
+                Marlow Modern Plastics LLC
+              </h1>
 
-/* ===== CNC MACHINE LAYER (REAL + BRIGHTER) ===== */
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
+              <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+                Innovative plastic product development, prototype creation,
+                design support, and manufacturing solutions.
+              </p>
 
-    /* MAIN CNC IMAGE */
-    background-image:
-        url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2600&q=80");
+              <p className="mt-4 text-lg text-slate-500">
+                Bringing ideas from concept to reality through practical
+                engineering, modern manufacturing methods, and rapid prototype
+                development.
+              </p>
 
-    background-size:cover;
-    background-position:center;
+              <div className="flex flex-wrap gap-4 mt-8">
+                <a
+                  href="tel:5615103691"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold"
+                >
+                  Call Now
+                </a>
 
-    /* BRIGHTER + MORE VISIBLE */
-    opacity:0.38;
-    filter:contrast(1.2) brightness(0.85);
-}
+                <a
+                  href="mailto:MarlowModernPlastics@gmail.com"
+                  className="border border-slate-300 px-6 py-3 rounded-xl font-semibold"
+                >
+                  Email Us
+                </a>
+              </div>
+            </div>
 
-/* LIGHT REFLECTION OVERLAY (SIMULATES SHOP LIGHTING) */
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
+            <div className="bg-white rounded-3xl shadow-2xl p-10 border border-slate-100">
+              <h2 className="text-3xl font-bold mb-6">
+                Product Development Focus
+              </h2>
 
-    background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 40%),
-        radial-gradient(circle at 70% 60%, rgba(59,130,246,0.20), transparent 55%),
-        linear-gradient(180deg, rgba(17,28,46,0.55), rgba(17,28,46,0.85));
+              <div className="space-y-5">
 
-    z-index:1;
-}
+                <div>
+                  <h3 className="font-semibold text-lg">
+                    Prototype Development
+                  </h3>
+                  <p className="text-slate-600">
+                    Supporting inventors, entrepreneurs, and businesses through
+                    early-stage product development and prototyping.
+                  </p>
+                </div>
 
-/* HERO CONTENT */
-.hero-content{
-    position:relative;
-    z-index:3;
-    max-width:1050px;
-    text-align:center;
-}
+                <div>
+                  <h3 className="font-semibold text-lg">
+                    Plastic Product Solutions
+                  </h3>
+                  <p className="text-slate-600">
+                    Broad experience supporting plastic product concepts,
+                    design refinement, and manufacturing preparation.
+                  </p>
+                </div>
 
-/* LOGO LAYER (SOFT FADE INTO ENVIRONMENT) */
-.logo-layer{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:2;
-    pointer-events:none;
-}
+                <div>
+                  <h3 className="font-semibold text-lg">
+                    Manufacturing Support
+                  </h3>
+                  <p className="text-slate-600">
+                    Assistance with production planning, process evaluation,
+                    and scalable manufacturing strategies.
+                  </p>
+                </div>
 
-.logo-layer svg{
-    width:100%;
-    max-width:950px;
+              </div>
+            </div>
 
-    opacity:0.42;
+          </div>
+        </div>
+      </section>
 
-    /* softer fade edges */
-    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 75%);
-            mask-image: radial-gradient(circle, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 75%);
+      {/* SERVICES */}
+      <section className="py-20 bg-slate-50">
 
-    filter:drop-shadow(0 35px 70px rgba(0,0,0,0.55));
-}
+        <div className="max-w-7xl mx-auto px-6">
 
-/* TEXT */
-.hero-content h1{
-    font-size:3rem;
-    margin-bottom:18px;
-    color:#ffffff;
-}
+          <h2 className="text-4xl font-bold text-center mb-12">
+            What We Do
+          </h2>
 
-.hero-content p{
-    font-size:1.15rem;
-    color:#d1d5db;
-    margin-bottom:25px;
-    line-height:1.6;
-}
+          <div className="grid md:grid-cols-3 gap-8">
 
-/* BUTTONS */
-.btn{
-    display:inline-block;
-    padding:12px 18px;
-    border-radius:8px;
-    font-weight:bold;
-    text-decoration:none;
-    margin:6px;
-}
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl font-bold mb-4">
+                Product Development
+              </h3>
+              <p>
+                Support for developing new plastic products from concept
+                through prototype stages.
+              </p>
+            </div>
 
-.btn-primary{ background:#3b82f6; color:white; }
-.btn-secondary{ background:white; color:#111c2e; }
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl font-bold mb-4">
+                Prototype Solutions
+              </h3>
+              <p>
+                Prototype planning and development support for inventors and
+                businesses.
+              </p>
+            </div>
 
-/* SECTIONS (LIGHTER FEEL) */
-section{
-    padding:80px 20px;
-    max-width:1100px;
-    margin:auto;
-}
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl font-bold mb-4">
+                Manufacturing Readiness
+              </h3>
+              <p>
+                Guidance for transitioning concepts into manufacturable
+                products.
+              </p>
+            </div>
 
-.section-title{
-    text-align:center;
-    font-size:2rem;
-    margin-bottom:40px;
-    color:#93c5fd;
-}
+          </div>
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:18px;
-}
+        </div>
+      </section>
 
-.card{
-    background:rgba(255,255,255,0.07);
-    border:1px solid rgba(255,255,255,0.10);
-    padding:20px;
-    border-radius:12px;
-    backdrop-filter:blur(6px);
-}
+      {/* CONTACT */}
+      <section className="py-20">
 
-.card h3{
-    color:#60a5fa;
-    margin-bottom:10px;
-}
+        <div className="max-w-4xl mx-auto px-6 text-center">
 
-/* GALLERY */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-}
+          <h2 className="text-4xl font-bold mb-8">
+            Contact Marlow Modern Plastics
+          </h2>
 
-.placeholder{
-    height:180px;
-    background:linear-gradient(135deg,#24324a,#334155);
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#cbd5e1;
-}
+          <div className="bg-white rounded-3xl shadow-xl p-10">
 
-/* CONTACT */
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
+            <p className="text-lg mb-4">
+              Phone: 561-510-3691
+            </p>
 
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:12px;
-    border-radius:8px;
-    border:none;
-}
+            <p className="text-lg mb-4">
+              Email: MarlowModernPlastics@gmail.com
+            </p>
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:50px 20px;
-    border-top:1px solid rgba(255,255,255,0.12);
-    margin-top:50px;
-    color:#cbd5e1;
-}
+            <p className="text-lg">
+              North Palm Beach, Florida 33408
+            </p>
 
-/* MOBILE */
-@media(max-width:900px){
-    .hero-content h1{ font-size:2.2rem; }
-    .contact{ grid-template-columns:1fr; }
-}
-</style>
-</head>
+          </div>
 
-<body>
+        </div>
+      </section>
 
-<nav>
-    <div><strong>MMP</strong></div>
-    <div class="links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<header class="hero" id="home">
-
-    <!-- CNC LOGO BACKGROUND -->
-    <div class="logo-layer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
-            <rect width="800" height="450" fill="#0B1D33"/>
-
-            <path d="M 600 0 Q 650 150 620 300 T 670 450 L 800 450 L 800 0 Z" fill="#3b82f6"/>
-            <path d="M 640 0 Q 680 180 660 280 T 710 450 L 800 450 L 800 0 Z" fill="#e5e7eb"/>
-
-            <g transform="translate(300,225)">
-                <circle cx="0" cy="0" r="175" fill="none" stroke="#60a5fa" stroke-width="5"/>
-
-                <path d="
-                    M -115,85 L -115,-85
-                    L -45,15
-                    L 10,-85
-                    L 10,85
-                    M 10,-85
-                    L 70,-85
-                    A 45,45 0 0,1 70,30
-                    L 10,30
-                " fill="none" stroke="#93c5fd" stroke-width="32"/>
-            </g>
-        </svg>
-    </div>
-
-    <!-- TEXT -->
-    <div class="hero-content">
-        <h1>Precision Plastic Fabrication for Industrial & Commercial Applications</h1>
-
+      {/* FOOTER */}
+      <footer className="bg-slate-900 text-white py-8 text-center">
         <p>
-            CNC machining, acrylic fabrication, machine guards, and custom
-            engineered plastic solutions built for precision and durability.
+          © 2026 Marlow Modern Plastics LLC
         </p>
+      </footer>
 
-        <a class="btn btn-primary" href="#contact">Request a Quote</a>
-        <a class="btn btn-secondary" href="tel:5615103691">Call 561-510-3691</a>
-    </div>
-
-</header>
-
-<section id="services">
-    <h2 class="section-title">Services</h2>
-
-    <div class="grid">
-        <div class="card"><h3>Custom Fabrication</h3></div>
-        <div class="card"><h3>CNC Routing</h3></div>
-        <div class="card"><h3>Acrylic Fabrication</h3></div>
-        <div class="card"><h3>Polycarbonate Solutions</h3></div>
-        <div class="card"><h3>Machine Guards</h3></div>
-        <div class="card"><h3>Industrial Components</h3></div>
-        <div class="card"><h3>Prototype Development</h3></div>
-        <div class="card"><h3>Specialty Fabrication</h3></div>
-    </div>
-</section>
-
-<section id="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="gallery">
-        <div class="placeholder">Acrylic Displays</div>
-        <div class="placeholder">Machine Guards</div>
-        <div class="placeholder">Custom Panels</div>
-        <div class="placeholder">Retail Fixtures</div>
-        <div class="placeholder">Prototype Parts</div>
-        <div class="placeholder">Industrial Components</div>
-    </div>
-</section>
-
-<section id="about">
-    <h2 class="section-title">About</h2>
-
-    <p style="text-align:center;max-width:850px;margin:auto;">
-        Marlow Modern Plastics provides precision fabrication services across South Florida.
-        CNC machining, acrylic fabrication, and custom industrial components.
-    </p>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">Contact</h2>
-
-    <div class="contact">
-        <div>
-            <p>Phone: 561-510-3691</p>
-            <p>Email: MarlowModernPlastics@gmail.com</p>
-            <p>Location: North Palm Beach, FL 33408</p>
-        </div>
-
-        <div>
-            <input placeholder="Name">
-            <input placeholder="Email">
-            <input placeholder="Phone">
-            <textarea placeholder="Project Details"></textarea>
-            <button class="btn btn-primary">Send Request</button>
-        </div>
-    </div>
-</section>
-
-<footer>
-    Marlow Modern Plastics • 561-510-3691 • MarlowModernPlastics@gmail.com
-</footer>
-
-</body>
-</html>
+    </main>
+  );
+}

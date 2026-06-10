@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #ffffff;
         }
         .container {
             max-width: 1100px;
@@ -20,69 +19,52 @@
             padding: 20px;
         }
 
-        /* --- Custom Rebuilt Logo Vector System --- */
+        /* --- Logo Components --- */
         .logo-group {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
-        .logo-wrapper {
-            position: relative;
-            width: 46px;
-            height: 46px;
+        .logo-circle {
+            background-color: #0d3b66;
+            color: #ffffff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .logo-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #0066ff;
-            border-radius: 50%;
-            box-sizing: border-box;
-            border-bottom-color: transparent;
-            transform: rotate(-45deg);
-        }
-        .logo-letters {
-            color: #0b1d3a;
-            font-size: 22px;
-            font-weight: 900;
-            font-family: 'Arial Black', sans-serif;
-            letter-spacing: -2px;
-            position: relative;
-            left: -1px;
-            z-index: 2;
-            line-height: 1;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            border: 2px solid #0d3b66;
         }
         .logo-text h1 {
             margin: 0;
-            font-size: 22px;
-            color: #0b1d3a;
-            letter-spacing: 1.5px;
+            font-size: 20px;
+            color: #051923;
+            letter-spacing: 1px;
             line-height: 1.1;
-            font-weight: 900;
         }
         .logo-text span {
             margin: 0;
             font-size: 10px;
-            color: #0066ff;
+            color: #0077b6;
             font-weight: bold;
             display: block;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         /* --- Header Navigation --- */
         header {
             background-color: #ffffff;
-            border-bottom: 3px solid #0b1d3a;
+            border-bottom: 2px solid #e0e0e0;
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(11, 29, 58, 0.08);
         }
         .nav-box {
             display: flex;
@@ -90,255 +72,179 @@
             align-items: center;
         }
         nav a {
-            margin-left: 22px;
+            margin-left: 20px;
             text-decoration: none;
-            color: #0b1d3a;
+            color: #333333;
             font-weight: bold;
             font-size: 14px;
-            transition: color 0.2s ease;
-        }
-        nav a:hover {
-            color: #0066ff;
         }
         nav a.quote-btn {
-            background-color: #0066ff;
+            background-color: #0056b3;
             color: #ffffff;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border-radius: 4px;
         }
-        nav a.quote-btn:hover {
-            background-color: #0b1d3a;
-        }
 
-        /* --- Hero Banner (Faded CNC Background Layout) --- */
+        /* --- Welcome Hero Banner with Background Image --- */
         .hero {
-            margin-top: 85px;
-            padding: 120px 0;
+            margin-top: 80px;
+            padding: 100px 0;
             position: relative;
-            background-color: #0b1d3a;
-            /* Linear gradients fade the specific CNC machining picture into transparency */
-            background-image: linear-gradient(90deg, #0b1d3a 35%, rgba(11, 29, 58, 0.85) 60%, rgba(11, 29, 58, 0.4) 100%), 
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.95) 45%, rgba(240,248,255,0.7) 100%), 
                               url('https://unsplash.com');
             background-size: cover;
             background-position: center right;
             background-repeat: no-repeat;
         }
         .hero-left {
-            max-width: 600px;
-            color: #ffffff;
+            max-width: 650px;
         }
         .hero .big-logo {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        .hero .big-logo .logo-wrapper {
-            width: 80px;
-            height: 80px;
-        }
-        .hero .big-logo .logo-ring {
-            border-width: 4px;
-            border-color: #0066ff;
-            border-bottom-color: transparent;
-        }
-        .hero .big-logo .logo-letters {
-            color: #ffffff;
-            font-size: 38px;
+        .hero .big-logo .logo-circle {
+            width: 75px;
+            height: 75px;
+            font-size: 28px;
         }
         .hero .big-logo .logo-text h1 {
-            color: #ffffff;
-            font-size: 36px;
+            font-size: 32px;
         }
         .hero .big-logo .logo-text span {
-            color: #0066ff;
             font-size: 14px;
         }
         .hero-subtitle {
-            font-size: 26px;
-            color: #ffffff;
+            font-size: 24px;
+            color: #051923;
             font-weight: bold;
             margin-bottom: 20px;
-            border-left: 5px solid #0066ff;
+            border-left: 4px solid #0077b6;
             padding-left: 15px;
         }
         .hero p {
             font-size: 16px;
             margin-bottom: 35px;
-            color: #dddddd;
+            color: #444444;
         }
         .btn {
             display: inline-block;
-            background-color: #0066ff;
+            background-color: #0056b3;
             color: #ffffff;
-            padding: 12px 28px;
+            padding: 12px 25px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
             margin-right: 15px;
-            transition: background-color 0.2s ease;
-        }
-        .btn:hover {
-            background-color: #ffffff;
-            color: #0b1d3a;
         }
         .btn-outline {
             background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #0066ff;
-            padding: 10px 26px;
-        }
-        .btn-outline:hover {
-            background-color: #0066ff;
-            color: #ffffff;
+            color: #0056b3;
+            border: 2px solid #0056b3;
+            padding: 10px 23px;
         }
 
         /* --- Core Services Grid --- */
         .services {
-            padding: 70px 0;
-            background-color: #ffffff;
+            padding: 60px 0;
         }
         .services-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: 20px;
             justify-content: space-between;
         }
         .service-box {
             flex: 1;
             min-width: 230px;
             background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 30px 25px;
+            border: 1px solid #e0e0e0;
+            padding: 25px;
             border-radius: 6px;
             text-align: center;
-            border-top: 4px solid #0b1d3a;
-            box-shadow: 0 4px 6px rgba(11, 29, 58, 0.02);
-            transition: transform 0.2s ease, border-top-color 0.2s ease;
-        }
-        .service-box:hover {
-            transform: translateY(-4px);
-            border-top-color: #0066ff;
         }
         .service-box h3 {
-            color: #0b1d3a;
+            color: #051923;
             margin-top: 0;
             margin-bottom: 15px;
-            font-size: 18px;
         }
 
         /* --- Business Description --- */
         .about {
-            background-color: #f8fafc;
-            padding: 70px 0;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+            background-color: #ffffff;
+            padding: 60px 0;
+            border-top: 1px solid #e0e0e0;
         }
         .about h2 {
-            color: #0b1d3a;
-            font-size: 32px;
-            margin-top: 10px;
+            color: #051923;
+            font-size: 28px;
         }
         .bullets {
-            margin-top: 25px;
-            padding-left: 0;
-            list-style: none;
+            margin-top: 20px;
+            padding-left: 20px;
         }
         .bullets li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: bold;
-            color: #0b1d3a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .bullets li::before {
-            content: "✓";
-            color: #0066ff;
-            font-weight: 900;
-            font-size: 18px;
         }
 
         /* --- Direct Office Contact --- */
         .contact {
-            background-color: #ffffff;
-            padding: 70px 0;
+            background-color: #f4f9ff;
+            padding: 60px 0;
             text-align: center;
         }
         .contact h2 {
-            margin-bottom: 45px;
-            color: #0b1d3a;
-            font-size: 32px;
+            margin-bottom: 40px;
         }
         .contact-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 25px;
-        }
-        .contact-item {
-            background: #f8fafc;
-            padding: 25px 40px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            min-width: 250px;
+            gap: 20px;
         }
         .contact-item h4 {
-            margin: 0 0 8px 0;
-            color: #0066ff;
+            margin: 0 0 5px 0;
+            color: #777777;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
         }
         .contact-item p {
             margin: 0;
             font-size: 18px;
             font-weight: bold;
-            color: #0b1d3a;
         }
 
         /* --- Footer --- */
         footer {
-            background-color: #0b1d3a;
+            background-color: #051923;
             color: #ffffff;
-            padding: 50px 0 30px 0;
+            padding: 40px 0;
             font-size: 14px;
         }
         .footer-row {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
             align-items: center;
         }
         .footer-left .logo-text h1 {
             color: #ffffff;
         }
-        .footer-left .logo-letters {
-            color: #ffffff;
-        }
-        .footer-left .logo-ring {
-            border-color: #0066ff;
-            border-bottom-color: transparent;
+        .footer-left .logo-circle {
+            border: 2px solid #ffffff;
         }
         .footer-right {
             max-width: 500px;
             text-align: right;
-            color: #cbd5e1;
+            color: #cccccc;
         }
         .copyright {
             text-align: center;
-            margin-top: 40px;
-            color: #64748b;
+            margin-top: 30px;
+            color: #777777;
             font-size: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-        }
-
-        /* --- Simple Responsive Fallbacks --- */
-        @media (max-width: 768px) {
-            .nav-box { flex-direction: column; gap: 20px; text-align: center; }
-            nav a { margin: 0 10px; display: inline-block; }
-            .hero { background-image: linear-gradient(180deg, #0b1d3a 80%, rgba(11, 29, 58, 0.4) 100%); padding: 80px 0; }
-            .footer-row { flex-direction: column; text-align: center; }
-            .footer-right { text-align: center; }
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -347,6 +253,74 @@
     <!-- Header Navigation -->
     <header>
         <div class="container nav-box">
+            <div class="logo-group">
+                <div class="logo-circle">MP</div>
+                <div class="logo-text">
+                    <h1>MARLOW</h1>
+                    <span>MODERN PLASTICS LLC</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="#" class="quote-btn">Request a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-left">
+                <div class="logo-group big-logo">
+                    <div class="logo-circle">MP</div>
+                    <div class="logo-text">
+                        <h1>MARLOW</h1>
+                        <span>MODERN PLASTICS LLC</span>
+                    </div>
+                </div>
+                <div class="hero-subtitle">Innovate. Prototype. Produce.</div>
+                <p>We deliver end-to-end development and manufacturing support for plastic products and components. From initial concept to prototype and beyond, we help bring ideas to life with precision, quality, and speed.</p>
+                <a href="#" class="btn">Our Services</a>
+                <a href="#" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Idea to Reality</h3>
+                    <p>We help turn concepts into functional prototypes and manufacturable products.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Prototype Development</h3>
+                    <p>Rapid prototyping and design support to test, refine, and validate your structural ideas.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Plastics Expertise</h3>
+                    <p>Extensive foundational knowledge in a wide range of plastics and modern manufacturing methods.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Scalable Solutions</h3>
+                    <p>From single rapid prototypes to full production support, we scale exactly with your volume needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Description -->
+    <section class="about">
+        <div class="container">
+            <span style="color:#0077b6; font-weight:bold; font-size:12px;">WHO WE ARE</span>
+            <h2>Your Partner in Plastic Product Development</h2>
+            <p>Marlow Modern Plastics LLC is a plastics development company focused on helping inventors, creators, and businesses successfully develop and manufacture plastic products.</p>
+            <p>We combine technical knowledge, hands-on experience, and a problem-solving approach to provide practical solutions that move your project forward.</p>
+
 
 
 

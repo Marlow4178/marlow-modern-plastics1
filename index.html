@@ -1,3 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marlow Modern Plastics LLC — Plastic Prototype Development</title>
+  <meta name="description" content="Marlow Modern Plastics LLC specializes in plastic prototype development and precision CNC machining. Ideas. Engineered. Realized.">
+  <meta property="og:title" content="Marlow Modern Plastics LLC">
+  <meta property="og:description" content="Plastic prototype development and precision manufacturing support.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #031424;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4 { font-family: "Oswald", sans-serif; letter-spacing: 0.01em; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    img { max-width: 100%; display: block; }
+
+    .container-x {
+      width: 100%;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+    }
+    .eyebrow {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Nav */
+    .nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem; padding-bottom: 1.5rem;
+    }
+    .logo-line {
+      display: flex;
+      align-items: baseline;
+      line-height: 1;
+    }
+    .logo-line span {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 1.875rem;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .logo-line .brand-letter { color: #1d70ff; }
+    .logo-sub {
+      font-family: "Oswald", sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.25rem;
+    }
+    .desktop-nav { display: none; }
+    .desktop-nav a {
+      font-family: "Oswald", sans-serif;
+      font-size: 0.875rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.9);
+      transition: color 0.2s;
+    }
+    .desktop-nav a:hover { color: #1d70ff; }
+    .menu-btn { color: #fff; display: block; }
+    .mobile-menu {
+      display: none;
+      background: rgba(3,20,36,0.95);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.9);
+      padding: 0.5rem 0;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #031424;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, #031424, rgba(3,20,36,0.85), rgba(3,20,36,0.3));
+    }
+    .hero-content {
+      position: relative;
+      padding-top: 10rem; padding-bottom: 6rem;
+    }
+    .hero-headline {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .hero-tagline {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #1d70ff;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+    }
+    .hero-bar {
+      width: 4rem; height: 2px;
+      background: #1d70ff;
+      margin-top: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      color: #c9d4e0;
+      font-size: 1rem;
+      max-width: 28rem;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #1d70ff; color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: #1d70ff; color: #1d70ff; }
+
+    /* Services */
+    .services {
+      background: #f4f6f8;
+      color: #031424;
+      padding: 5rem 0;
+    }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header .bar {
+      display: inline-block;
+      width: 2.5rem; height: 1px;
+      background: #1d70ff;
+      vertical-align: middle;
+    }
+    .section-header .eyebrow {
+      color: #1d70ff;
+      font-size: 0.875rem;
+      margin: 0 1rem;
+      vertical-align: middle;
+    }
+    .section-title {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      color: #031424;
+      margin-top: 0.75rem;
+    }
+    .services-grid {
+      display: grid;
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .service-icon {
+      width: 4rem; height: 4rem;
+      color: #1d70ff;
+      stroke-width: 1.25;
+    }
+    .service-title {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-top: 1.5rem;
+      color: #031424;
+    }
+    .service-bar {
+      width: 2.5rem; height: 2px;
+      background: #1d70ff;
+      margin: 0.75rem 0;
+    }
+    .service-desc {
+      color: #4b5563;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      max-width: 20rem;
+    }
+
+    /* Capabilities */
+    .capabilities {
+      background: #031424;
+      padding: 5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .capabilities .section-title { color: #fff; }
+    .caps-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .cap-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.02);
+      padding: 1rem;
+    }
+    .cap-icon {
+      width: 1.25rem; height: 1.25rem;
+      color: #1d70ff;
+      flex-shrink: 0;
+    }
+    .cap-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* About */
+    .about {
+      background: #031424;
+      padding: 5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .about-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text .eyebrow { color: #1d70ff; font-size: 0.875rem; }
+    .about-text .section-title { color: #fff; margin-top: 0.75rem; }
+    .about-text p {
+      color: #c9d4e0;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stat-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.02);
+      padding: 1.5rem;
+    }
+    .stat-label {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #1d70ff;
+      font-size: 0.75rem;
+    }
+    .stat-value {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      color: #fff;
+    }
+
+    /* Contact */
+    .contact {
+      position: relative;
+      background: #031424;
+      padding: 5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      overflow: hidden;
+    }
+    .contact-bg {
+      position: absolute; inset: 0;
+      opacity: 0.15; pointer-events: none;
+    }
+    .contact-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .contact-bg-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, #031424, rgba(3,20,36,0.9), rgba(3,20,36,0.6));
+    }
+    .contact-accent {
+      position: absolute;
+      right: -8rem; top: 0; bottom: 0;
+      width: 400px;
+      background: rgba(29,112,255,0.8);
+      transform: skewX(-12deg);
+      opacity: 0.9;
+      display: none;
+    }
+    .contact-accent-line {
+      position: absolute;
+      right: 3rem; top: 0; bottom: 0;
+      width: 2px;
+      background: #1d70ff;
+      transform: skewX(-12deg);
+      display: none;
+    }
+    .contact-grid {
+      position: relative;
+      display: grid;
+      gap: 3rem;
+    }
+    .contact-left .section-title {
+      color: #fff;
+      font-size: 2.25rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .contact-left p { color: #c9d4e0; max-width: 28rem; }
+    .contact-items { margin-top: 2.5rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item a { display: flex; align-items: center; gap: 1rem; transition: opacity 0.2s; }
+    .contact-item a:hover { opacity: 0.8; }
+    .contact-icon-box {
+      width: 3rem; height: 3rem;
+      background: #1d70ff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon-box svg {
+      width: 1.25rem; height: 1.25rem;
+      color: #fff;
+    }
+    .contact-label {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #1d70ff;
+      font-size: 0.75rem;
+    }
+    .contact-value {
+      color: #fff;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    .contact-form-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem;
+    }
+    .contact-form-box h3 {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .form-row {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #fff;
+      font-family: inherit;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.4); }
+    .form-input:focus {
+      outline: none;
+      border-color: #1d70ff;
+    }
+    textarea.form-input { resize: none; }
+    .form-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #1d70ff; color: #fff;
+      padding: 0.75rem 2rem;
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      transition: opacity 0.2s;
+    }
+    .form-btn:hover:not(:disabled) { opacity: 0.9; }
+    .form-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-status {
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+    .form-status.success { color: #1d70ff; }
+    .form-status.error { color: #f87171; }
+
+    /* Footer */
+    .footer {
+      background: #1d70ff;
+      padding: 2rem 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .footer-tagline {
+      font-family: "Oswald", sans-serif;
+      color: #fff;
+    }
+    .footer-copy {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .footer-border {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .desktop-nav { display: flex; align-items: center; gap: 2rem; }
+      .menu-btn { display: none; }
+      .hero-headline { font-size: 3.75rem; }
+      .hero-content { padding-top: 12rem; padding-bottom: 8rem; }
+      .section-title { font-size: 3rem; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid > .service-card + .service-card { border-left: 1px solid #d1d5db; }
+      .caps-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+      .contact-left .section-title { font-size: 3rem; }
+      .contact-form-box { padding: 2rem; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: row; align-items: center; gap: 3rem; }
+      .footer-border { display: block; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 3rem; }
+      .footer-copy { margin-left: auto; }
+      .contact-accent, .contact-accent-line { display: block; }
+    }
+    @media (min-width: 1024px) {
+      .hero-headline { font-size: 4.5rem; }
+      .caps-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="hero-cnc.jpg" alt="CNC machining a plastic block" width="1536" height="1024">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <header class="nav">
+      <div class="container-x nav-inner">
+        <a href="#home" aria-label="Home">
+          <div class="logo-line">
+            <span>M</span><span>M</span><span class="brand-letter">P</span>
+          </div>
+          <div class="logo-sub">MARLOW MODERN PLASTICS LLC</div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="#home">HOME</a>
+          <a href="#services">SERVICES</a>
+          <a href="#capabilities">CAPABILITIES</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="container-x" style="display:flex;flex-direction:column;padding-top:1rem;padding-bottom:1rem;gap:1rem;">
+          <a href="#home" class="mobile-link">HOME</a>
+          <a href="#services" class="mobile-link">SERVICES</a>
+          <a href="#capabilities" class="mobile-link">CAPABILITIES</a>
+          <a href="#about" class="mobile-link">ABOUT</a>
+          <a href="#contact" class="mobile-link">CONTACT</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-content container-x">
+      <div style="max-width: 42rem;">
+        <h1 class="hero-headline">Plastic<br>Prototype<br>Development</h1>
+        <p class="hero-tagline">Ideas. Engineered. Realized.</p>
+        <div class="hero-bar"></div>
+        <p class="hero-desc">Marlow Modern Plastics LLC specializes in plastic prototype development and precision manufacturing support. We turn concepts into functional prototypes with speed, accuracy, and attention to detail.</p>
+        <div class="hero-btns">
+          <a href="tel:5615103691" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            561-510-3691
+          </a>
+          <a href="#contact" class="btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            EMAIL US
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="container-x">
+      <div class="section-header">
+        <span class="bar"></span>
+        <span class="eyebrow">What We Do</span>
+        <span class="bar"></span>
+        <h2 class="section-title">Solutions For Every Stage</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          <h3 class="service-title">PROTOTYPE DEVELOPMENT</h3>
+          <div class="service-bar"></div>
+          <p class="service-desc">From initial concept to functional prototype, we support product development with precision and fast turnaround.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+          <h3 class="service-title">PRECISION MACHINING</h3>
+          <div class="service-bar"></div>
+          <p class="service-desc">Advanced CNC machining of engineering plastics with exacting tolerances and consistent quality.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m20 12 2 0"/><path d="m2 12 2 0"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="m4.9 19.1 1.4-1.4"/><path d="m17.7 6.3 1.4-1.4"/></svg>
+          <h3 class="service-title">CUSTOM SOLUTIONS</h3>
+          <div class="service-bar"></div>
+          <p class="service-desc">Every project is unique. We provide flexible solutions tailored to your material, design, and application requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities" class="capabilities">
+    <div class="container-x">
+      <div class="section-header">
+        <span class="eyebrow" style="display:block;margin-bottom:0.75rem;">Capabilities</span>
+        <h2 class="section-title">Built For Precision</h2>
+      </div>
+      <div class="caps-grid">
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">CNC Milling & Turning</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Engineering Plastics</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Rapid Prototyping</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Low-Volume Production</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Tight Tolerance Work</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Design Consultation</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Material Selection</span>
+        </div>
+        <div class="cap-item">
+          <svg class="cap-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span class="cap-text">Finishing & Assembly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container-x about-grid">
+      <div class="about-text">
+        <span class="eyebrow">About</span>
+        <h2 class="section-title">Engineered In North Palm Beach</h2>
+        <div class="hero-bar"></div>
+        <p>Marlow Modern Plastics LLC partners with engineers, designers, and product teams to bring plastic components from concept to reality. We focus on quality craftsmanship, responsive communication, and turnaround times that keep your project moving.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Quality</div>
+          <div class="stat-value">First-Pass</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Lead Times</div>
+          <div class="stat-value">Days, Not Weeks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Tolerances</div>
+          <div class="stat-value">± .005"</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Materials</div>
+          <div class="stat-value">Engineering Plastics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="contact-bg">
+      <img src="hero-cnc.jpg" alt="" loading="lazy" width="1536" height="1024">
+      <div class="contact-bg-overlay"></div>
+    </div>
+    <div class="contact-accent"></div>
+    <div class="contact-accent-line"></div>
+    <div class="container-x contact-grid">
+      <div class="contact-left">
+        <h2 class="section-title">Let's Build<br>Something Great</h2>
+        <div class="hero-bar"></div>
+        <p>Have a project in mind? We're here to help bring your ideas to life.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <a href="tel:5615103691">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">PHONE</div>
+                <div class="contact-value">561-510-3691</div>
+              </div>
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:marlowmodernplastics@gmail.com">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">EMAIL</div>
+                <div class="contact-value">marlowmodernplastics@gmail.com</div>
+              </div>
+            </a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">LOCATION</div>
+              <div class="contact-value">North Palm Beach, FL 33408</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <h3>SEND US A MESSAGE</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" maxlength="100" required class="form-input">
+            <input type="email" name="email" placeholder="Email Address" maxlength="150" required class="form-input">
+          </div>
+          <input type="text" name="subject" placeholder="Subject" maxlength="120" class="form-input" style="margin-bottom:1rem;">
+          <textarea name="message" placeholder="Tell us about your project..." rows="5" maxlength="2000" required class="form-input" style="margin-bottom:1rem;"></textarea>
+          <button type="submit" class="form-btn" id="formBtn">SEND MESSAGE</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container-x footer-inner">
+      <div>
+        <div class="logo-line">
+          <span>M</span><span>M</span><span class="brand-letter">P</span>
+        </div>
+        <div class="logo-sub">MARLOW MODERN PLASTICS LLC</div>
+      </div>
+      <div class="footer-border footer-tagline">
+        <div>Modern Solutions.</div>
+        <div>Precision Results.</div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Marlow Modern Plastics LLC.<br>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      menuBtn.innerHTML = menuOpen
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>';
+    });
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        menuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>';
+      });
+    });
+
+    // Contact form
+    const form = document.getElementById('contactForm');
+    const formBtn = document.getElementById('formBtn');
+    const formStatus = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formBtn.disabled = true;
+      formBtn.textContent = 'SENDING...';
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+      try {
+        const res = await fetch('https://formspree.io/f/xojzlrwe', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          formStatus.textContent = "Thanks — we'll be in touch shortly.";
+          formStatus.classList.add('success');
+          form.reset();
+        } else {
+          throw new Error('Formspree error');
+        }
+      } catch (err) {
+        formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+        formStatus.classList.add('error');
+      } finally {
+        formBtn.disabled = false;
+        formBtn.textContent = 'SEND MESSAGE';
+      }
+    });
+  </script>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html lang="en">

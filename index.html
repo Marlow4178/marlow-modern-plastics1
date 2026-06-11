@@ -6,182 +6,148 @@
 <title>Marlow Modern Plastics LLC</title>
 
 <style>
-  :root{
-    --navy:#071a33;
-    --midblue:#1f6fff;
-    --light:#f5f8ff;
-    --white:#ffffff;
+  :root {
+    --navy: #0b1f3a;
+    --blue: #1f6fff;
+    --light: #f5f8ff;
+    --white: #ffffff;
   }
 
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  body{
-    overflow-x:hidden;
-    color:var(--navy);
+  body {
+    background: var(--light);
+    color: var(--navy);
+    overflow-x: hidden;
   }
 
-  /* ===== HERO BACKGROUND (GRADIENT LAYERS + CNC IMAGE) ===== */
-  .hero{
-    position:relative;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px;
-    overflow:hidden;
+  /* HERO SECTION */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
   }
 
-  /* CNC MACHINE BACKGROUND */
-  .hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      url("https://images.unsplash.com/photo-1581092160607-7a3a6b9b8c5c?auto=format&fit=crop&w=2200&q=80")
-      center/cover no-repeat;
-    transform:scale(1.15);
-    filter:contrast(1.15) brightness(1.05);
-    opacity:0.65;
-    z-index:0;
+  /* CNC BACKGROUND */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://images.unsplash.com/photo-1581091012184-7c2d7b5c8c2c?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+    opacity: 0.45;
+    transform: scale(1.1);
+    filter: contrast(1.1) brightness(1.2);
+    z-index: 0;
   }
 
-  /* GRADIENT OVERLAY LAYERS */
-  .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(circle at top left, rgba(31,111,255,0.35), transparent 55%),
-      radial-gradient(circle at bottom right, rgba(7,26,51,0.55), transparent 60%),
-      linear-gradient(to bottom, rgba(245,248,255,0.6), rgba(7,26,51,0.65));
-    z-index:1;
+  /* OVERLAY */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(245,248,255,0.7),
+      rgba(11,31,58,0.55)
+    );
+    z-index: 1;
   }
 
-  .content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
+  /* CONTENT */
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
   }
 
-  /* ===== MODERN MONOGRAM LOGO (MMP OVERLAP) ===== */
-  .logo-wrap{
-    display:flex;
-    justify-content:center;
-    margin-bottom:18px;
+  .logo {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--navy);
+    padding: 18px 28px;
+    border: 3px solid var(--blue);
+    display: inline-block;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    margin-bottom: 20px;
+    border-radius: 10px;
   }
 
-  .logo-svg{
-    width:140px;
-    height:140px;
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.25));
+  .tagline {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 25px;
   }
 
-  .tagline{
-    font-size:22px;
-    font-weight:500;
-    color:#0b1f3a;
-    margin-bottom:25px;
-    text-shadow:0 2px 10px rgba(255,255,255,0.4);
+  .cta {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease;
   }
 
-  .cta{
-    display:inline-block;
-    padding:14px 30px;
-    background:linear-gradient(135deg, var(--midblue), #2f8bff);
-    color:white;
-    font-weight:700;
-    text-decoration:none;
-    border-radius:8px;
-    transition:0.25s ease;
-    box-shadow:0 10px 20px rgba(31,111,255,0.25);
+  .cta:hover {
+    background: #1557cc;
   }
 
-  .cta:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 30px rgba(31,111,255,0.35);
+  /* INFO SECTION */
+  .info {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
   }
 
-  /* ===== INFO SECTION ===== */
-  .info{
-    padding:90px 20px;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f3f7ff 50%, #ffffff 100%);
-    text-align:center;
+  .info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--navy);
   }
 
-  .info h2{
-    font-size:34px;
-    margin-bottom:18px;
-    color:var(--navy);
+  .info p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
   }
 
-  .info p{
-    max-width:820px;
-    margin:0 auto;
-    font-size:18px;
-    line-height:1.7;
-    color:#2b2b2b;
+  /* FOOTER */
+  footer {
+    padding: 30px;
+    text-align: center;
+    background: var(--navy);
+    color: white;
   }
 
-  /* ===== FOOTER ===== */
-  footer{
-    padding:35px 20px;
-    text-align:center;
-    background:linear-gradient(135deg, var(--navy), #0c2d5c);
-    color:white;
+  .small {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 5px;
   }
-
-  .small{
-    font-size:13px;
-    opacity:0.8;
-    margin-top:6px;
-  }
-
 </style>
 </head>
 
 <body>
 
 <section class="hero">
+  <div class="overlay"></div>
 
   <div class="content">
-
-    <!-- ===== LOGO (MM OVERLAP + P INTEGRATED) ===== -->
-    <div class="logo-wrap">
-      <svg class="logo-svg" viewBox="0 0 200 200">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#1f6fff"/>
-            <stop offset="100%" stop-color="#071a33"/>
-          </linearGradient>
-        </defs>
-
-        <!-- M -->
-        <path d="M30 150 L30 40 L70 100 L110 40 L110 150"
-              fill="none" stroke="url(#g1)" stroke-width="14"
-              stroke-linecap="square" stroke-linejoin="miter"/>
-
-        <!-- second M (overlap shifted) -->
-        <path d="M70 150 L70 40 L110 100 L150 40 L150 150"
-              fill="none" stroke="url(#g1)" stroke-width="14"
-              stroke-linecap="square" stroke-linejoin="miter"
-              opacity="0.9"/>
-
-        <!-- P integrated -->
-        <path d="M155 150 L155 40
-                 M155 40 L190 40
-                 M190 40 L190 85
-                 M190 85 L155 85"
-              fill="none" stroke="url(#g1)" stroke-width="14"
-              stroke-linecap="square" stroke-linejoin="miter"/>
-      </svg>
-    </div>
+    <div class="logo">M M P</div>
 
     <div class="tagline">
       Precision CNC Plastics Prototyping & Manufacturing
@@ -190,18 +156,15 @@
     <a class="cta" href="mailto:info@marlowmodernplastics.com">
       Contact Us
     </a>
-
   </div>
-
 </section>
 
 <section class="info">
   <h2>Engineering Modern Plastic Solutions</h2>
   <p>
-    Marlow Modern Plastics LLC delivers high-precision CNC machining and rapid prototyping
-    services for industrial, commercial, and product development applications.
-    We specialize in turning concepts into manufacturable parts with tight tolerances,
-    fast turnaround, and consistent quality.
+    Marlow Modern Plastics LLC specializes in CNC machining and rapid prototyping
+    for industrial and commercial applications. We help businesses bring concepts
+    to life with precision manufacturing, fast turnaround, and reliable quality.
   </p>
 </section>
 
